@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/fonts/fontello-71dcf3ae/css/fontawesome-codes.css">
+    <link rel="stylesheet" href="./assets/fonts/fontello-71dcf3ae/css/fontawesome-embedded.css">
+    <link rel="stylesheet" href="./assets/fonts/fontello-71dcf3ae/css/fontawesome-ie7-codes.css">
+    <link rel="stylesheet" href="./assets/fonts/fontello-71dcf3ae/css/fontawesome-ie7.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.0.0-web/css/all.css">
+    <link rel="stylesheet" href="./assets/fonts/font-awesome.css">
+    <link rel="stylesheet" href="./assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/all.css">
+    <link rel="shortcut icon" href="#">
+    <meta charset="utf-8" >
+    <title>
+        
+    </title>
+</head>
+<body>
+    <div id="main">
+        <header class="header">
+            <div class="header-container">
+                <div class="header-container__left">
+                    <div class="header-container__left-logo">
+                        <i class="logo-icon fa-brands fa-soundcloud"></i>
+                    </div>
+
+                    <div class="header-container__bar-items background-black border-right">
+                        Home
+                    </div>
+
+                    <div class="header-container__bar-items border-right">
+                        Stream
+                    </div>
+
+                    <div class="header-container__bar-items border-right">
+                        Library
+                    </div>
+                </div>
+                <div class="header-search">
+                    <input placeholder="Search" class="search-input" type="text">
+                    <button class="search-button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    
+                </div>
+                <div class="header-right">
+                    <div class="header-container__bar-items">
+                        Upload
+                    </div>
+
+                    <div id="Nav-User" class="header-right_UserNav header-container__bar-items" onclick="OnOff ('User-Menu'); AddSelectedModified('Nav-User'); ;  OffModified('Nav-User'); ">
+                        <span class="user-avatar">
+                            <img class="img-avatar" src="./assets/img/IMG1_03391.jpg" alt="">
+                        </span>
+                        <span class="user-name">
+                            Nhân Bùi
+                        </span>
+                        <i class="fa-solid fa-angle-down"></i>
+                        <ul id="User-Menu" class="header-menulist menu-left">
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    <i class="header-optionlist_profile-icon fa-solid fa-user"></i>
+                                    Profile
+                                </a>
+                            </li>
+
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    <i class="header-optionlist_profile-icon fa-solid fa-heart"></i>
+                                    Like
+                                </a>
+                            </li>
+
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    <i class="header-optionlist_profile-icon fa fa-list" aria-hidden="true"></i>
+                                    Playlists
+                                </a>
+                            </li>
+
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    <i class="header-optionlist_profile-icon fa fa-podcast" aria-hidden="true"></i>
+                                    Stations
+                                </a>
+                            </li>
+
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    <i class="header-optionlist_profile-icon fa fa-users" aria-hidden="true"></i>
+                                    Following
+                                </a>
+                            </li>
+
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    <i class="header-optionlist_profile-icon fa fa-users" aria-hidden="true"></i>
+                                    Who to follow
+                                </a>
+                            </li>
+
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    <i class="header-optionlist_profile-icon header-optionlist_profile-icon fa fa-star"></i>
+                                    Try Pro
+                                </a>
+                            </li>
+
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    <i class="header-optionlist_profile-icon fa fa-bar-chart" aria-hidden="true"></i>
+                                    Tracks
+                                </a>
+                            </li>
+
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    <i class="header-optionlist_profile-icon fa fa-tasks" aria-hidden="true"></i>
+                                    Distribute
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="bell-btn" class="bell-btn header-container__bar-items font-size-16" onclick="OnOff('menu-notifi'); AddSelectedModified('bell-btn'); OffModified('bell-btn');  ">
+                        <i class="fa-solid fa-bell"></i>
+                        <div id="menu-notifi" class="menu-notification position-noti">
+                            <div class="menu-notification_header">
+                                <h2 class="menu-title">Notifications</h2>
+                                <a href="" class="menu-setting-btn" >Settings</a>
+                            </div>
+                            <div class="menu-notification_body border-top">
+                                <div class="menu-notification_body-message">
+                                    No notifications
+                                </div>
+                            </div>
+
+                            <a href="#" class="menu-notification_footer">
+                                View all notifications
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div id="mail-btn" class="header-container__bar-items font-size-16 relative" onclick="OnOff('menu-mail'); AddSelectedModified('mail-btn');  OffModified('mail-btn'); " >
+                        <i class="fa-solid fa-envelope"></i>
+                        <div id="menu-mail" class="menu-notification position-mail">
+                            <div class="menu-notification_header">
+                                <h2 class="menu-title">Messages</h2>
+                                <!-- <a href="" class="menu-setting-btn" >Settings</a> -->
+                            </div>
+                            <div class="menu-notification_body border-top">
+                                <div class="menu-notification_body-message">
+                                    No messages
+                                </div>
+                            </div>
+
+                            <a href="#" class="menu-notification_footer">
+                                View all messages
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div id="more-btn" class="nav-more header-container__bar-items font-size-16" onclick="OnOff('menu-more');  AddSelectedModified('more-btn');  OffModified('more-btn');">
+                        <i class="fa-solid fa-ellipsis"></i>
+                        <ul id="menu-more" class="header-menulist menu-right witdh-171">
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    About us
+                                </a>
+                            </li>
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    Legal
+                                </a>
+                            </li>
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    Coppyright
+                                </a>
+                            </li>
+
+                            <li class="header-optionlist border-top">
+                                <a href="" class="header-optionlist_profile">
+                                    Mobile apps
+                                </a>
+                            </li>
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    For Creators
+                                </a>
+                            </li>
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    Blog
+                                </a>
+                            </li>
+
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    Developers
+                                </a>
+                            </li>
+
+                            <li class="header-optionlist border-top">
+                                <a href="" class="header-optionlist_profile">
+                                    Support
+                                </a>
+                            </li>
+
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    Settings
+                                </a>
+                            </li>
+
+                            <li class="header-optionlist">
+                                <a href="" class="header-optionlist_profile">
+                                    Sign out
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                
+            </div>
+        </header>
+        <div class="body">
+            <div class="content-container">
+
+                <div class="content-container_left">
+
+                    
+                    <div class="modul-left">
+                        <div></div>
+                        <div class="col border-bottom margin-bottom-34">
+
+                            <h2 class="modul-left_title">More of what you like</h2>
+                            <p class="modul-left_describe">Suggestions based on what you've liked or played</p>
+                            <div class="col relative">
+                                
+                                <div class="modul-left_container">
+                                    <div id="slider3" class="slider">
+    
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-nlIy7SbcCwDCOhWO-1TsD7w-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">Chúng ta của hiện tại</a>
+                                            <span>Related tracks</span>
+                                        </div>
+            
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-000005328221-0vhgqp-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">Dòng thời gian</a>
+                                            <span>Related tracks</span>
+                                        </div>
+            
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-000191567152-6ogpm0-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">Cơn mưa cuối</a>
+                                            <span>Related tracks</span>
+                                        </div>
+        
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-000125404277-g3oic3-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">2AM - JustaTee ft BigDaddy</a>
+                                            <span>Related tracks</span>
+                                        </div>
+
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-000515554215-mq6d4b-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">1NG ai đưa em về</a>
+                                            <span>Related tracks</span>
+                                        </div>
+
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-uuM7vrcFep49m56L-Hv2CAg-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">SoundCloud Weekly</a>
+                                            <span>Related tracks</span>
+                                        </div>
+
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-000753227629-a4hkxj-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">Mixed for Nhân Bùi</a>
+                                            <span>Related tracks</span>
+                                        </div>
+
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-000405464955-n4ge52-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">Morning Chillout</a>
+                                            <span>Related tracks</span>
+                                        </div>
+                                    </div>
+           
+                                </div>
+                                <button class="right-btn" onclick="marginleft('slider3','left-btn3')">
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </button>
+
+                                <button id="left-btn3" class="left-btn" onclick="marginright('slider3','left-btn3')">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+
+                            </div>
+                        </div>
+                        <div class="col border-bottom margin-bottom-34">
+
+                            <h2 class="modul-left_title">Recently Played</h2>
+                            <p class="modul-left_describe"></p>
+                            
+                            <div class="col relative">
+                                <div class="modul-left_container">
+                                
+                                    <div id="slider" class="slider">
+                                        
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-000191567152-6ogpm0-t500x500.jpg"" alt="">
+                                            </div>
+                    
+                                            <a href="">
+                                                Cơn Mưa Cuối - JustaTee </a>
+                                            <span>Related tracks</span>
+                                        </div>
+            
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-000515554215-mq6d4b-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">1NG ai đưa em về</a>
+                                            <span>Uyên</span>
+                                        </div>
+            
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-000458864706-ddcep5-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">Nguyen dinh toan lofi</a>
+                                            <span>duck</span>
+                                        </div>
+                                        
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-IsFv3NzDEzF7-0-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">Charlie Puth - Losing My Mind</a>
+                                            <span>Lora Perez</span>
+                                        </div>
+                                        
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-000148703272-cikcm4-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">Tearliner - 이끌림 (Vocal by Kim Go Eun 김고은)</a>
+                                            <span>Related tracks</span>
+                                        </div>
+                                        
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-000388088421-5xl072-t500x500.jpg ">
+                                            </div>
+                    
+                                            <a href="">| Chill | Lofi | Hip Hop |</a>
+                                            <span>helennpham</span>
+                                        </div>
+
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-000214699632-lg7fth-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">Spring's Coming</a>
+                                            <span>Yeonkkot</span>
+                                        </div>
+
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-ZiZ39u9wsG5FDzD6-9uNOuA-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">Country</a>
+                                            <span>New & hot</span>
+                                        </div>
+    
+                                        
+                                    </div>
+                                      
+                                    
+                                </div>
+
+                                <button class="right-btn" onclick="marginleft('slider','left-btn')">
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </button>
+
+                                <button id="left-btn" class="left-btn" onclick="marginright('slider','left-btn')">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                            </div>
+                            
+                        
+                        </div>
+
+                        <div class="col border-bottom margin-bottom-34">
+
+                            <h2 class="modul-left_title">Charts: Top 50</h2>
+                            <p class="modul-left_describe">The most played tracks on SoundCloud this week</p>
+                            <div class="col relative">
+                                <div class="modul-left_container">
+                                    
+                                    <div id="slider2" class="slider">
+
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-5WT43mrqN692Qu8K-Ly6ypw-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">House</a>
+                                            <span>Top 50</span>
+                                        </div>
+            
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-000253796816-4rm2so-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">Dance & EDM</a>
+                                            <span>Top 50</span>
+                                        </div>
+
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-000196621207-6nysvx-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">Deep House</a>
+                                            <span>Top 50</span>
+                                        </div>
+                                        
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-0yc4nMJVjUOWVfGw-hHVAUw-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">R&B & Soul</a>
+                                            <span>Top 50</span>
+                                        </div>
+                                        
+                                        <div class="modul-left_item">
+                                            <div class="modul-left_item-container-img">
+                                                <img class="modul-left_image" src="./assets/img/artworks-sQw94zMYUdouOCUL-HJdbug-t500x500.jpg" alt="">
+                                            </div>
+                    
+                                            <a href="">Contry</a>
+                                            <span>Lora Perez</span>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <button class="right-btn" onclick="marginleft('slider2','left-btn2')">
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </button>
+
+                                <button id="left-btn2" class="left-btn" onclick="marginright('slider2','left-btn2')">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                            </div>
+                            
+                        </div>
+                        <div class="col border-bottom margin-bottom-34">
+
+                            <h2 class="modul-left_title">The Upload</h2>
+                            <p class="modul-left_describe">Newly posted tracks. Just for you</p>
+                            <div class="col relative">
+                                <div class="list-music row">
+                                    <div class="list-music_image">
+                                        <img src="./assets/img/artworks-emmFzcHhGWE11mxf-FePN5Q-t500x500.jpg" alt="">
+                                    </div>
+                                    <div class="list-music-container">
+                                        <ul class="list-music-container_scroll col">
+                                            <li class="list-music-item">
+                                                <div class="list-music-item_detail-song">
+                                                    <span class="color-opa-07">
+                                                        Dat Coi Official  
+                                                    </span>
+                                                    <span class="color-white">
+                                                        Mặt Trời Khóc - Emcee L (Da LAB) Ft Orange
+                                                    </span>
+                                                </div>
+                                                <div class="list-music-item_group color-white relative">
+                                                    <div class="list-music-item_play-rate">
+                                                        <span class="font-11">
+                                                            <i class="fa-solid fa-play"></i>
+                                                        </span>
+                                                        <span class="font-11">
+                                                            4,912
+                                                        </span>
+
+                                                    </div>
+
+                                                    <div class="group-btn_right">
+                                                        <button>
+                                                            <i class="fa-solid fa-heart"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-repeat"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-share"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-link"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-ellipsis"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                
+                                            </li>
+                                            <li class="list-music-item">
+                                                <div class="list-music-item_detail-song">
+                                                    <span class="color-opa-07">
+                                                        ANSEZ
+                                                    </span>
+                                                    <span class="color-white">
+                                                        [AR] Bên Trên Tầng Lầu - Tăng Duy Tân (Zang Remix)
+                                                    </span>
+                                                </div>
+                                                <div class="list-music-item_group color-white relative">
+                                                    <div class="list-music-item_play-rate">
+                                                        <span class="font-11">
+                                                            <i class="fa-solid fa-play"></i>
+                                                        </span>
+                                                        <span class="font-11">
+                                                            5,235
+                                                        </span>
+
+                                                    </div>
+
+                                                    <div class="group-btn_right">
+                                                        <button>
+                                                            <i class="fa-solid fa-heart"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-repeat"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-share"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-link"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-ellipsis"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                
+                                            </li>
+
+                                            <li class="list-music-item">
+                                                <div class="list-music-item_detail-song">
+                                                    <span class="color-opa-07">
+                                                       𝚒 𝚑𝚊𝚟𝚎 𝚊 𝚜𝚕𝚘𝚠𝚎𝚍 𝚜𝚘𝚗𝚐
+                                                    </span>
+                                                    <span class="color-white">
+                                                        𝙷𝚊𝚗𝚑 𝚙𝚑𝚞𝚌 𝚋𝚘 𝚛𝚘𝚒 𝚎𝚖_𝚜𝚕𝚘𝚠𝚎𝚍 + 𝚛𝚎𝚟𝚎𝚛𝚋
+                                                    </span>
+                                                </div>
+                                                <div class="list-music-item_group color-white relative">
+                                                    <div class="list-music-item_play-rate">
+                                                        <span class="font-11">
+                                                            <i class="fa-solid fa-play"></i>
+                                                        </span>
+                                                        <span class="font-11">
+                                                            5,21M
+                                                        </span>
+
+                                                    </div>
+
+                                                    <div class="group-btn_right">
+                                                        <button>
+                                                            <i class="fa-solid fa-heart"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-repeat"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-share"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-link"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-ellipsis"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                
+                                            </li>
+                                            <li class="list-music-item">
+                                                <div class="list-music-item_detail-song">
+                                                    <span class="color-opa-07">
+                                                        Neva  
+                                                    </span>
+                                                    <span class="color-white">
+                                                        Chạy Về Khóc Với Anh Remix
+                                                    </span>
+                                                </div>
+                                                <div class="list-music-item_group color-white relative">
+                                                    <div class="list-music-item_play-rate">
+                                                        <span class="font-11">
+                                                            <i class="fa-solid fa-play"></i>
+                                                        </span>
+                                                        <span class="font-11">
+                                                            1,32M
+                                                        </span>
+
+                                                    </div>
+
+                                                    <div class="group-btn_right">
+                                                        <button>
+                                                            <i class="fa-solid fa-heart"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-repeat"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-share"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-link"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-ellipsis"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                
+                                            </li>
+                                            <li class="list-music-item">
+                                                <div class="list-music-item_detail-song">
+                                                    <span class="color-opa-07">
+                                                        dwcuongg
+                                                    </span>
+                                                    <span class="color-white">
+                                                        Xích Thêm Chút - XTC Remix | RPT Groovie ft TLinh x RPT MCK-(SPEEDUP)
+                                                    </span>
+                                                </div>
+                                                <div class="list-music-item_group color-white relative">
+                                                    <div class="list-music-item_play-rate">
+                                                        <span class="font-11">
+                                                            <i class="fa-solid fa-play"></i>
+                                                        </span>
+                                                        <span class="font-11">
+                                                            4,912
+                                                        </span>
+
+                                                    </div>
+
+                                                    <div class="group-btn_right">
+                                                        <button>
+                                                            <i class="fa-solid fa-heart"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-repeat"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-share"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-link"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-ellipsis"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                
+                                            </li>
+                                            <li class="list-music-item">
+                                                <div class="list-music-item_detail-song">
+                                                    <span class="color-opa-07">
+                                                        BRIAN - JUST GO
+                                                    </span>
+                                                    <span class="color-white">
+                                                        BRIAN-HONEY
+                                                    </span>
+                                                </div>
+                                                <div class="list-music-item_group color-white relative">
+                                                    <div class="list-music-item_play-rate">
+                                                        <span class="font-11">
+                                                            <i class="fa-solid fa-play"></i>
+                                                        </span>
+                                                        <span class="font-11">
+                                                            4,912
+                                                        </span>
+
+                                                    </div>
+
+                                                    <div class="group-btn_right">
+                                                        <button>
+                                                            <i class="fa-solid fa-heart"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-repeat"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-share"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-link"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-ellipsis"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                
+                                            </li>
+
+                                            <li class="list-music-item">
+                                                <div class="list-music-item_detail-song">
+                                                    <span class="color-opa-07">
+                                                        VRT
+                                                    </span>
+                                                    <span class="color-white">
+                                                        SAO ANH CHƯA VỀ NHÀ - AMEE (ft. RICKY STAR) | VRT Remix
+                                                    </span>
+                                                </div>
+                                                <div class="list-music-item_group color-white relative">
+                                                    <div class="list-music-item_play-rate">
+                                                        <span class="font-11">
+                                                            <i class="fa-solid fa-play"></i>
+                                                        </span>
+                                                        <span class="font-11">
+                                                            4,912
+                                                        </span>
+
+                                                    </div>
+
+                                                    <div class="group-btn_right">
+                                                        <button>
+                                                            <i class="fa-solid fa-heart"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-repeat"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-share"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-link"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-ellipsis"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                
+                                            </li>
+                                            <li class="list-music-item">
+                                                <div class="list-music-item_detail-song">
+                                                    <span class="color-opa-07">
+                                                        VRT
+                                                    </span>
+                                                    <span class="color-white">
+                                                        SAO ANH CHƯA VỀ NHÀ - AMEE (ft. RICKY STAR) | VRT Remix
+                                                    </span>
+                                                </div>
+                                                <div class="list-music-item_group color-white relative">
+                                                    <div class="list-music-item_play-rate">
+                                                        <span class="font-11">
+                                                            <i class="fa-solid fa-play"></i>
+                                                        </span>
+                                                        <span class="font-11">
+                                                            4,912
+                                                        </span>
+
+                                                    </div>
+
+                                                    <div class="group-btn_right">
+                                                        <button>
+                                                            <i class="fa-solid fa-heart"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-repeat"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-share"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-link"></i>
+                                                        </button>
+                                                        <button>
+                                                            <i class="fa-solid fa-ellipsis"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                
+                                                
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        
+
+                    </div>
+                    
+                    
+                    
+                </div>
+                
+                <div class="content-container_right">
+                    <div class="slidebar-modul">
+                        <a class="slidebar-modul_linkrefresh border-bottom" href="">
+                            <span>
+                                <i class="fa-solid fa-users"></i>
+                            </span>
+                            <span>
+                                Artists you should follow
+                            </span>
+                            <span class="float-right">
+                                <i class="fa-solid fa-arrow-rotate-right"></i>
+                                Refresh list
+                            </span>
+
+                        </a>
+                        <div class="slidebar-modul_container">
+                            <div class="slidebar-modul_item">
+                                <div class="row">
+                                    <div class="slidebar-modul_item-img ">
+                                        <img class="radius-50" src="./assets/img/avatars-WqDmfUP2LwsNjrJX-WusJmQ-t120x120.jpg" alt="">
+                                    </div>
+                                    <div class="col slidebar-modul_item-content padding-8-0">
+                                        <span>
+                                            TINLE
+                                        </span>
+                                        <div class="row slidebar-modul_item-content-rate" >
+                                            <span class="">
+                                                <i class="fa-solid fa-users font-11"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">
+                                                11.7K
+                                            </span>
+                                            <span>
+                                                <i class="fa fa-bar-chart font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">19</span>
+                                        </div>
+                                        
+
+                                    </div>
+                                    <button class="follow-btn">
+                                        <i class="fa-solid fa-user-plus follow-icon"></i>
+                                        <span class="">Follow</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="slidebar-modul_item">
+                                <div class="row">
+                                    <div class="slidebar-modul_item-img">
+                                        <img class="radius-50" src="./assets/img/avatars-lShHCeaAcZ6Wz3Ay-57FURQ-t120x120.jpg" alt="">
+                                    </div>
+                                    <div class="col slidebar-modul_item-content padding-8-0">
+                                        <span>
+                                            denvau 
+                                            <span class="check-icon">
+                                                <i class="fa-solid fa-check font-11"></i>
+                                            </span>
+                                        </span>
+                                        <div class="row slidebar-modul_item-content-rate" >
+                                            <span class="">
+                                                <i class="fa-solid fa-users font-11"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">
+                                                281k
+                                            </span>
+                                            <span>
+                                                <i class="fa fa-bar-chart font-10" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">67</span>
+                                        </div>
+                                        
+
+                                    </div>
+                                    <button class="follow-btn">
+                                        <i class="fa-solid fa-user-plus follow-icon"></i>
+                                        <span class="">Follow</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="slidebar-modul_item">
+                                <div class="row">
+                                    <div class="slidebar-modul_item-img">
+                                        <img class="radius-50" src="./assets/img/artworks-nlIy7SbcCwDCOhWO-1TsD7w-t500x500.jpg" alt="">
+                                    </div>
+                                    <div class="col slidebar-modul_item-content padding-8-0">
+                                        <span>
+                                            Sơn Tùng MTP
+                                            <span class="check-icon">
+                                                <i class="fa-solid fa-check font-11"></i>
+                                            </span>
+                                        </span>
+                                        <div class="row slidebar-modul_item-content-rate" >
+                                            <span class="">
+                                                <i class="fa-solid fa-users font-11"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">
+                                                1M
+                                            </span>
+                                            <span>
+                                                <i class="fa fa-bar-chart font-10" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">100</span>
+                                        </div>
+                                        
+
+                                    </div>
+                                    <button class="follow-btn">
+                                        <i class="fa-solid fa-user-plus follow-icon"></i>
+                                        <span class="">Follow</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                    <div class="slidebar-modul">
+                        <a class="slidebar-modul_linkrefresh border-bottom" href="">
+                            <span>
+                                <i class="fa-solid fa-heart"></i>
+                            </span>
+                            <span>
+                                40 likes
+                            </span>
+                            <span class="float-right">
+                                View all
+                            </span>
+
+                        </a>
+                        <div class="slidebar-modul_container">
+                            <div class="slidebar-modul_item">
+                                <div class="row relative modul-right-hover">
+                                    <div class="slidebar-modul_item-img">
+                                        <img src="./assets/img/artworks-000148703272-cikcm4-t500x500.jpg" alt="">
+                                    </div>
+                                    <div class="col slidebar-modul_item-content ">
+                                        <span class="">
+                                            putitbackon
+                                        </span>
+                                        <span class="color-333">
+                                            Tearliner - 이끌림 (Vocal by Kim Go...
+                                        </span>
+                                        <div class="row slidebar-modul_item-content-rate" >
+                                            <span class="">
+                                                <i class="fa-solid fa-play font-11"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">
+                                                228K
+                                            </span>
+                                            <span>
+                                                <i class="fa-solid fa-heart font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">2.629</span>
+                                            
+                                            <span>
+                                                <i class="fa-solid fa-repeat font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">1.916</span>
+
+                                            <span>
+                                                <i class="fa-solid fa-comment font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">25</span>
+                                        </div>
+                                        
+
+                                    </div>
+                                    <div class="bar-right_play-btn">
+                                        <span class="bar-right_play-btn-background radius-50">
+                                            <i class="fa-solid fa-play"></i>
+                                            <!-- <i class="fa-solid fa-pause"></i> -->
+                                        </span>
+                                    </div>
+
+                                    <div class="button-group-small">
+                                        
+                                        <button class="bar-right_heart-btn color-f50">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                    
+                                    
+                                        <button class="bar-right_heart-btn">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slidebar-modul_item">
+                                <div class="row relative modul-right-hover">
+                                    <div class="slidebar-modul_item-img">
+                                        <img src="./assets/img/artworks-000596738276-2hrimy-t120x120.jpg" alt="">
+                                    </div>
+                                    <div class="col slidebar-modul_item-content">
+                                        
+                                        <span>
+                                            Luminous Corner
+                                        </span>
+                                        <span class="color-333">
+                                            Someone You Loved (Cover)
+                                        </span>
+                                        <div class="row slidebar-modul_item-content-rate" >
+                                            <span class="">
+                                                <i class="fa-solid fa-play font-11"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">
+                                                228K
+                                            </span>
+                                            <span>
+                                                <i class="fa-solid fa-heart font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">2.629</span>
+                                            
+                                            <span>
+                                                <i class="fa-solid fa-repeat font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">1.916</span>
+
+                                            <span>
+                                                <i class="fa-solid fa-comment font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">25</span>
+                                        </div>
+                                        
+
+                                    </div>
+                                    <div class="bar-right_play-btn">
+                                        <span href="" class="bar-right_play-btn-background radius-50">
+                                            <i class="fa-solid fa-play"></i>
+                                        </span>
+                                    </div>
+
+                                    <div class="button-group-small">
+                                        
+                                        <button class="bar-right_heart-btn color-f50">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                    
+                                    
+                                        <button class="bar-right_heart-btn">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slidebar-modul_item">
+                                <div class="row relative modul-right-hover">
+                                    <div class="slidebar-modul_item-img">
+                                        <img src="./assets/img/artworks-000678170602-y42zal-t120x120.jpg" alt="">
+                                    </div>
+                                    <div class="col slidebar-modul_item-content">
+                                        
+                                        <span>
+                                            L2ShareOST23
+                                        </span>
+                                        <span class="color-333">가호 (Gaho) - 시작 (Start Over)
+                                        </span>
+                                        <div class="row slidebar-modul_item-content-rate" >
+                                            <span class="">
+                                                <i class="fa-solid fa-play font-11"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">
+                                                6.21M
+                                            </span>
+                                            <span>
+                                                <i class="fa-solid fa-heart font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">2.629</span>
+                                            
+                                            <span>
+                                                <i class="fa-solid fa-repeat font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">1.916</span>
+
+                                            <span>
+                                                <i class="fa-solid fa-comment font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">25</span>
+                                        </div>
+                                        
+
+                                    </div>
+
+                                    <div class="bar-right_play-btn">
+                                        <span href="" class="bar-right_play-btn-background radius-50">
+                                            <i class="fa-solid fa-play"></i>
+                                        </span>
+                                    </div>
+
+                                    <div class="button-group-small">
+                                        
+                                        <button class="bar-right_heart-btn color-f50">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                    
+                                    
+                                        <button class="bar-right_heart-btn">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                    <div class="slidebar-modul">
+                        <a class="slidebar-modul_linkrefresh border-bottom" href="">
+                            <span>
+                                <i class="fa-solid fa-calendar"></i>
+                            </span>
+                            <span>
+                                Listenning history
+                            </span>
+                            <span class="float-right">
+                                View all
+                            </span>
+
+                        </a>
+                        <div class="slidebar-modul_container">
+
+                            <div class="slidebar-modul_item">
+                                <div class="row relative modul-right-hover">
+                                    <div class="slidebar-modul_item-img">
+                                        <img src="./assets/img/artworks-000515555997-yzvnc3-t120x120.jpg" alt="">
+                                    </div>
+                                    <div class="col slidebar-modul_item-content ">
+                                        <span class="">
+                                            1nG
+                                        </span>
+                                        <span class="color-333">
+                                            Ai Đưa Em Về - 1nG x VoVanDuc
+                                        </span>
+                                        <div class="row slidebar-modul_item-content-rate" >
+                                            <span class="">
+                                                <i class="fa-solid fa-play font-11"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">
+                                                228K
+                                            </span>
+                                            <span>
+                                                <i class="fa-solid fa-heart font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">2.629</span>
+                                            
+                                            <span>
+                                                <i class="fa-solid fa-repeat font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">1.916</span>
+
+                                            <span>
+                                                <i class="fa-solid fa-comment font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">25</span>
+                                        </div>
+                                        
+
+                                    </div>
+                                    <div class="bar-right_play-btn">
+                                        <span href="" class="bar-right_play-btn-background radius-50">
+                                            <i class="fa-solid fa-play"></i>
+                                        </span>
+                                    </div>
+
+                                    <div class="button-group-small">
+                                        
+                                        <button class="bar-right_heart-btn color-f50">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                    
+                                    
+                                        <button class="bar-right_heart-btn">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slidebar-modul_item">
+                                <div class="row relative modul-right-hover">
+                                    <div class="slidebar-modul_item-img">
+                                        <img src="./assets/img/artworks-000678170602-y42zal-t120x120.jpg" alt="">
+                                    </div>
+                                    <div class="col slidebar-modul_item-content">
+                                        
+                                        <span>
+                                            L2ShareOST23
+                                        </span>
+                                        <span class="color-333">가호 (Gaho) - 시작 (Start Over)
+                                        </span>
+                                        <div class="row slidebar-modul_item-content-rate" >
+                                            <span class="">
+                                                <i class="fa-solid fa-play font-11"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">
+                                                6.21M
+                                            </span>
+                                            <span>
+                                                <i class="fa-solid fa-heart font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">2.629</span>
+                                            
+                                            <span>
+                                                <i class="fa-solid fa-repeat font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">1.916</span>
+
+                                            <span>
+                                                <i class="fa-solid fa-comment font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">25</span>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="bar-right_play-btn">
+                                        <span href="" class="bar-right_play-btn-background radius-50">
+                                            <i class="fa-solid fa-play"></i>
+                                        </span>
+                                    </div>
+
+                                    <div class="button-group-small">
+                                        
+                                        <button class="bar-right_heart-btn color-f50">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                    
+                                    
+                                        <button class="bar-right_heart-btn">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="slidebar-modul_item">
+                                <div class="row relative modul-right-hover">
+                                    <div class="slidebar-modul_item-img">
+                                        <img src="./assets/img/artworks-0R9gSQGhq4Cz5vLG-0E5MzA-t120x120.jpg" alt="">
+                                    </div>
+                                    <div class="col slidebar-modul_item-content">
+                                        
+                                        <span>
+                                            Minh Phuong Doan
+                                        </span>
+                                        <span class="color-333">
+                                            Một mình có buồn không (Freak D)...
+                                        </span>
+                                        <div class="row slidebar-modul_item-content-rate" >
+                                            <span class="">
+                                                <i class="fa-solid fa-play font-11"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">
+                                                265K
+                                            </span>
+                                            <span>
+                                                <i class="fa-solid fa-heart font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">2.629</span>
+                                            
+                                            <span>
+                                                <i class="fa-solid fa-repeat font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">1.916</span>
+
+                                            <span>
+                                                <i class="fa-solid fa-comment font-11" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="font-11 slidebar-modul_item-content-number">25</span>
+                                        </div>
+                                        
+
+                                    </div>
+                                    <div class="bar-right_play-btn">
+                                        <span href="" class="bar-right_play-btn-background radius-50">
+                                            <i class="fa-solid fa-play"></i>
+                                        </span>
+                                    </div>
+
+                                    <div class="button-group-small">
+                                        
+                                        <button class="bar-right_heart-btn color-f50">
+                                            <i class="fa-solid fa-heart"></i>
+                                        </button>
+                                    
+                                    
+                                        <button class="bar-right_heart-btn">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                        </div>
+
+                    </div>
+
+                    <div class="slidebar-modul">
+                        <a class="slidebar-modul_linkrefresh border-bottom" href="">
+                        </a>
+                        
+                        <div class="sliderbar-footer">
+                            <a class="link-sliderbarfooter" href="">Legal</a>
+                            -
+                            <a class="link-sliderbarfooter" href="">Privacy</a>
+                            -
+                            <a class="link-sliderbarfooter" href="">Cookie Policy</a>
+                            -
+                            <a class="link-sliderbarfooter" href="">Consent Manager</a>
+                            -
+                            <a class="link-sliderbarfooter" href="">Imprint</a>
+                            -
+                            <a class="link-sliderbarfooter" href="">Creator Resources</a>
+                            -
+                            <a class="link-sliderbarfooter" href="">Blog</a>
+                            -
+                            <a class="link-sliderbarfooter" href="">Charts</a>
+                            -
+                            <a class="link-sliderbarfooter color-38d" href="">Language: </a> <span>English (US)</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+        <div class="player-control relative">
+            <div class="player-control_container row">
+                
+                <div class="player-control_btn-group">
+
+                    <button onclick="Back()">
+                        <i class="fa-solid fa-backward-step"></i>
+                    </button>
+                    <button onclick="PlayMusic()">
+                        <i id="play-btn" class="fa-solid fa-play"></i>
+                    </button>
+                    <button onclick="Next()">
+                        <i class="fa-solid fa-forward-step"></i>
+                    </button>
+                    <button onclick="shuffle()">
+                        <i class="fa-solid fa-shuffle"></i>
+                    </button>
+                    <button onclick="Repeat()">
+                        <i class="fa-solid fa-repeat"></i>
+                    </button>
+                </div>
+
+                <div class="player-control_timeline">
+                    <div class="timeline_time">
+                        <span>
+                            0:00
+                        </span>
+                    </div>
+
+                    
+                    <!-- <div class="progress relative">
+                        <div class="progress_background">
+                            
+                        </div>
+                        <div class="progress_playing relative">
+                            <div class="progress_handle" >
+
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                    <input id="range-player" type="range" class="range-player" min="0" max="100" step="0.001">
+                    
+                    <div class="total-time">
+                        <span>
+                            6:01
+                        </span>
+                    </div>
+                </div>
+                <div class="player-control_volume-btn relative" >
+                    <button onclick="MuteAudio()">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+
+                    <div class="control-volume relative">
+                       <input id="range-volume" class="range-volume" type="range"  min="0" max="100" value="0" step="0.001">
+                    </div>
+
+                </div>
+
+
+                <div class="playing-info row" >
+                    <div class="playing-info_img">
+                        <img src="./assets/img/artworks-fBLlkXlVVQy3m9OW-dzt6jg-t500x500.jpg" alt="">
+                    </div>
+                    <div class="playing-info_title col">
+                        <a href="">PVN music</a>
+                        <span>Độ Đúng Đời</span>
+                    </div>
+
+                    <div class="playing-info_btn-group" >
+                        <button>
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+                        <button>
+                            <i class="fa-solid fa-user-plus"></i>
+                        </button>
+                        <button id="play-list-btn">
+                            <i class="fa-solid fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="play-list">
+                <div class="play-list-header row">
+                    <div class="play-list-header_title">Next Up</div>
+                    <button class="play-list-header_clear">Clear</button>
+                    <button class="play-list-header_close"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="play-list-container">
+                    <div class="col">
+                        <div class="play-list-item row relative">
+                            <div class="play-list-item_drag-btn font-size-12">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+
+                            <div class="play-list-item_img relative">
+                                <img src="./assets/img/artworks-000191567152-6ogpm0-t500x500.jpg" alt="">
+                                <div class="play-list-item_status-btn" ><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="play-list-item_info col">
+                                <a href="">Cơn Mưa Cuối</a>
+                                <span>JustaTee x Binz<span>
+                            </div>
+                            <div class="play-list-item_footer relative">
+                                <span class="play-list-item_total-time">4:11</span>
+                                
+                                <div class="play-list-item_group-btn">
+                                    <button class="font-size-12  color-f50">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                    <button class="font-size-12">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="play-list-item row relative">
+                            <div class="play-list-item_drag-btn font-size-12">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+
+                            <div class="play-list-item_img relative">
+                                <img src="./assets/img/artworks-268DzyD0TKonqqou-TbjvCg-t500x500.jpg" alt="">
+                                <div class="play-list-item_status-btn" ><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="play-list-item_info col">
+                                <a href="">Có Hẹn Với Thanh Xuân</a>
+                                <span>Monstar</span>
+                            </div>
+                            <div class="play-list-item_footer relative">
+                                <span class="play-list-item_total-time">3:25</span>
+                                
+                                <div class="play-list-item_group-btn">
+                                    <button class="font-size-12  color-f50">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                    <button class="font-size-12">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="play-list-item row relative">
+                            <div class="play-list-item_drag-btn font-size-12">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+
+                            <div class="play-list-item_img relative">
+                                <img src="./assets/img/artworks-ZiZ39u9wsG5FDzD6-9uNOuA-t500x500.jpg" alt="">
+                                <div class="play-list-item_status-btn" ><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="play-list-item_info col">
+                                <a href="">Phố Đã Lên Đèn</a>
+                                <span>Huyền Tâm Môn</span>
+                            </div>
+                            <div class="play-list-item_footer relative">
+                                <span class="play-list-item_total-time">3:25</span>
+                                
+                                <div class="play-list-item_group-btn">
+                                    <button class="font-size-12  color-f50">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                    <button class="font-size-12">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="play-list-item row relative">
+                            <div class="play-list-item_drag-btn font-size-12">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+
+                            <div class="play-list-item_img relative">
+                                <img src="./assets/img/artworks-000405464955-n4ge52-t500x500.jpg" alt="">
+                                <div class="play-list-item_status-btn" ><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="play-list-item_info col">
+                                <a href="">Walk Thru Fire</a>
+                                <span>Meron Ryan</span>
+                            </div>
+                            <div class="play-list-item_footer relative">
+                                <span class="play-list-item_total-time">3:25</span>
+                                
+                                <div class="play-list-item_group-btn">
+                                    <button class="font-size-12  color-f50">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                    <button class="font-size-12">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="play-list-item row relative">
+                            <div class="play-list-item_drag-btn font-size-12">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+
+                            <div class="play-list-item_img relative">
+                                <img src="./assets/img/artworks-000458864706-ddcep5-t500x500.jpg" alt="">
+                                <div class="play-list-item_status-btn" ><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="play-list-item_info col">
+                                <a href="">Title</a>
+                                <span>Meghan Trainor</span>
+                            </div>
+                            <div class="play-list-item_footer relative">
+                                <span class="play-list-item_total-time">3:25</span>
+                                
+                                <div class="play-list-item_group-btn">
+                                    <button class="font-size-12  color-f50">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                    <button class="font-size-12">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="play-list-item row relative">
+                            <div class="play-list-item_drag-btn font-size-12">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+
+                            <div class="play-list-item_img relative">
+                                <img src="./assets/img/artworks-TeICxOAJkwB1gokt-WrF38Q-t500x500.jpg" alt="">
+                                <div class="play-list-item_status-btn" ><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="play-list-item_info col">
+                                <a href="">TAEIL (태일) - Starlight (Twenty Five Twenty One 스물다섯 스물하나 OST Part 1)</a>
+                                <span>L2ShareOST42</span>
+                            </div>
+                            <div class="play-list-item_footer relative">
+                                <span class="play-list-item_total-time">3:25</span>
+                                
+                                <div class="play-list-item_group-btn">
+                                    <button class="font-size-12  color-f50">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                    <button class="font-size-12">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="play-list-item row relative">
+                            <div class="play-list-item_drag-btn font-size-12">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+
+                            <div class="play-list-item_img relative">
+                                <img src="./assets/img/artworks-000125404277-g3oic3-t500x500.jpg" alt="">
+                                <div class="play-list-item_status-btn" ><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="play-list-item_info col">
+                                <a href="">2AM</a>
+                                <span>JustaTee feat Big Daddy</span>
+                            </div>
+                            <div class="play-list-item_footer relative">
+                                <span class="play-list-item_total-time">3:25</span>
+                                
+                                <div class="play-list-item_group-btn">
+                                    <button class="font-size-12  color-f50">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                    <button class="font-size-12">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="play-list-item row relative">
+                            <div class="play-list-item_drag-btn font-size-12">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+
+                            <div class="play-list-item_img relative">
+                                <img src="./assets/img/artworks-fBLlkXlVVQy3m9OW-dzt6jg-t500x500.jpg" alt="">
+                                <div class="play-list-item_status-btn" ><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="play-list-item_info col">
+                                <a href="">Độ Đúng Đời</a>
+                                <span>Thiện Hưng</span>
+                            </div>
+                            <div class="play-list-item_footer relative">
+                                <span class="play-list-item_total-time">3:25</span>
+                                
+                                <div class="play-list-item_group-btn">
+                                    <button class="font-size-12  color-f50">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                    <button class="font-size-12">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="play-list-item row relative">
+                            <div class="play-list-item_drag-btn font-size-12">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+
+                            <div class="play-list-item_img relative">
+                                <img src="./assets/img/artworks-ECsNcOayySc3ApMa-P7jm8g-t500x500.jpg" alt="">
+                                <div class="play-list-item_status-btn" ><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="play-list-item_info col">
+                                <a href="">MUỘN RỒI MÀ SAO CÒN</a>
+                                <span>Sơn Tùng MTP</span>
+                            </div>
+                            <div class="play-list-item_footer relative">
+                                <span class="play-list-item_total-time">3:25</span>
+                                
+                                <div class="play-list-item_group-btn">
+                                    <button class="font-size-12  color-f50">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                    <button class="font-size-12">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="play-list-item row relative">
+                            <div class="play-list-item_drag-btn font-size-12">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+
+                            <div class="play-list-item_img relative">
+                                <img src="./assets/img/artworks-000147758756-bmnnid-t500x500.jpg" alt="">
+                                <div class="play-list-item_status-btn" ><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="play-list-item_info col">
+                                <a href="">Người từng thương</a>
+                                <span>NHA</span>
+                            </div>
+                            <div class="play-list-item_footer relative">
+                                <span class="play-list-item_total-time">3:25</span>
+                                
+                                <div class="play-list-item_group-btn">
+                                    <button class="font-size-12  color-f50">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                    <button class="font-size-12">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="play-list-item row relative">
+                            <div class="play-list-item_drag-btn font-size-12">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+
+                            <div class="play-list-item_img relative">
+                                <img src="./assets/img/artworks-uuM7vrcFep49m56L-Hv2CAg-t500x500.jpg" alt="">
+                                <div class="play-list-item_status-btn" ><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="play-list-item_info col">
+                                <a href="">FOREVER LOVE</a>
+                                <span>viet underground</span>
+                            </div>
+                            <div class="play-list-item_footer relative">
+                                <span class="play-list-item_total-time">3:25</span>
+                                
+                                <div class="play-list-item_group-btn">
+                                    <button class="font-size-12  color-f50">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                    <button class="font-size-12">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="play-list-item row relative">
+                            <div class="play-list-item_drag-btn font-size-12">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+
+                            <div class="play-list-item_img relative">
+                                <img src="./assets/img/artworks-0yc4nMJVjUOWVfGw-hHVAUw-t500x500.jpg" alt="">
+                                <div class="play-list-item_status-btn" ><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="play-list-item_info col">
+                                <a href="">Không Bằng</a>
+                                <span>RIN Music</span>
+                            </div>
+                            <div class="play-list-item_footer relative">
+                                <span class="play-list-item_total-time">3:25</span>
+                                
+                                <div class="play-list-item_group-btn">
+                                    <button class="font-size-12  color-f50">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                    <button class="font-size-12">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+
+                        <div class="play-list-item row relative">
+                            <div class="play-list-item_drag-btn font-size-12">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+
+                            <div class="play-list-item_img relative">
+                                <img src="./assets/img/artworks-oKwAaDWD59mIqHit-zwH5Jw-t500x500.jpg" alt="">
+                                <div class="play-list-item_status-btn" ><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="play-list-item_info col">
+                                <a href="">Thích Em Hơi Nhiều</a>
+                                <span>LoFi Version by 1 9 6 7</span>
+                            </div>
+                            <div class="play-list-item_footer relative">
+                                <span class="play-list-item_total-time">3:25</span>
+                                
+                                <div class="play-list-item_group-btn">
+                                    <button class="font-size-12  color-f50">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
+                                    <button class="font-size-12">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <audio id="audio" src="./assets/music/y2mate.com - ĐỘ ĐÚNG ĐỜI  THIỆN HƯNG ft ĐỘ MIXI  LYRIC AUDIO.mp3"></audio>
+        </div>
+        
+    </div>
+    
+    <script src="./assets/scrip/main.js"></script>
+    <script>
+        function OnOff (a){
+                var x = document.getElementById(a);
+                
+                if(x.style.display == '' || x.style.display == 'none'){
+                    x.style.display = 'block';
+                }
+                else{
+                    x.style.display = 'none';
+                }
+            }
+        function AddSelectedModified(a){
+            var x = document.getElementById(a);
+            
+            if(x.className.includes('selected') == true){
+                x.classList.remove('selected');
+
+            }
+            else{
+                x.classList.add('selected')
+            }
+        }
+
+        function OffModified(a){
+            var userbtn = document.getElementById('Nav-User');
+            var menuuser = document.getElementById('User-Menu');
+
+            var bellbtn = document.getElementById('bell-btn');
+            var menubell = document.getElementById('menu-notifi');
+
+            var mailbtn = document.getElementById('mail-btn');
+            var menumail = document.getElementById('menu-mail');
+
+            var morebtn = document.getElementById('more-btn');
+            var menumore = document.getElementById('menu-more');
+
+            
+            if(a === 'Nav-User'){
+                bellbtn.classList.remove('selected');
+                menubell.style.display = 'none';
+            
+                mailbtn.classList.remove('selected');
+                menumail.style.display = 'none';
+
+                morebtn.classList.remove('selected');
+                menumore.style.display = 'none';
+            }
+            if(a === 'bell-btn'){
+                userbtn.classList.remove('selected');
+                menuuser.style.display = 'none';
+            
+                mailbtn.classList.remove('selected');
+                menumail.style.display = 'none';
+
+                morebtn.classList.remove('selected');
+                menumore.style.display = 'none';
+            }
+            if(a === 'mail-btn'){
+                userbtn.classList.remove('selected');
+                menuuser.style.display = 'none';
+            
+                bellbtn.classList.remove('selected');
+                menubell.style.display = 'none';
+
+                morebtn.classList.remove('selected');
+                menumore.style.display = 'none';
+            }
+            if(a ==='more-btn'){
+                userbtn.classList.remove('selected');
+                menuuser.style.display = 'none';
+            
+                bellbtn.classList.remove('selected');
+                menubell.style.display = 'none';
+
+                mailbtn.classList.remove('selected');
+                menumail.style.display = 'none';
+            }
+            
+        }
+
+        // function myFunction(id) {
+        //     var x = document.getElementById(id);
+        //     if (x.className.indexOf("w3-show") == -1) {
+        //         x.className += " w3-show";
+        //         x.previousElementSibling.className += " w3-theme-d1";
+        //     } else { 
+        //         x.className = x.className.replace("w3-show", "");
+        //         x.previousElementSibling.className = 
+        //         x.previousElementSibling.className.replace(" w3-theme-d1", "");
+        //     }
+        // }
+
+        // // Used to toggle the menu on smaller screens when clicking on the menu button
+        // function openNav() {
+        //     var x = document.getElementById("navDemo");
+        //     if (x.className.indexOf("w3-show") == -1) {
+        //         x.className += " w3-show";
+        //     } else { 
+        //         x.className = x.className.replace(" w3-show", "");
+        //     }
+        // }
+
+        
+        function marginleft(a,b){
+            var x = document.getElementById(a);
+            x.classList.add('slide-left')
+            var leftbtn = document.getElementById(b)
+            leftbtn.style.display = 'block'
+
+        }
+
+        function marginright(a,b){
+            var x = document.getElementById(a);
+            x.classList.remove('slide-left')
+            var leftbtn = document.getElementById(b)
+            leftbtn.style.display = 'none'
+        }
+
+    </script>
+</body>
+</html>
