@@ -8,14 +8,18 @@ var TextTotalTime = document.querySelector('.total-time span')
 var playbtn = document.getElementById('play-btn')
 const rangePlayer = document.getElementById('range-player')
 const timeupdate = document.querySelector('.timeline_time span')
-var volume = document.querySelector('#range-volume')
+// var volume = document.querySelector('#range-volume')
 
-volume.value = 100;
-volume.oninput = function(){
-   volume.style.background = "linear-gradient(90deg,#f50 " + volume.value +"%" +",#ccc " + volume.value +"%";
-   audio.volume = volume.value/100
 
-}
+var playlist_playbtns = document.querySelectorAll('.play-list-item_status-btn i')
+
+
+// volume.value = 100;
+// volume.oninput = function(){
+//    volume.style.background = "linear-gradient(90deg,#f50 " + volume.value +"%" +",#ccc " + volume.value +"%";
+//    audio.volume = volume.value/100
+
+// }
 
 
 rangePlayer.oninput = function (){
@@ -47,7 +51,11 @@ audio.onloadeddata = function(){
     TextTotalTime.textContent = formatTime(audio.duration)
     rangePlayer.value = 0;
 
+    
+
+
 }
+
 
 audio.ontimeupdate = function (){
     
@@ -245,13 +253,14 @@ function PlayMusic (){
 function Next (){
     if(indexSong < songs.length - 1){
         
+        
+        
         indexSong++;
         audio.src = "./assets/music/" + songs[indexSong].source_audio;
         playertitle_author.textContent = songs[indexSong].singer
         playertitle_name.textContent = songs[indexSong].name
         imgplayer.src = "./assets/img/" + songs[indexSong].image
         audio.play();
-        playbtn.className = "fa-solid fa-pause";
 
        
     }
@@ -259,14 +268,13 @@ function Next (){
 
 function Back(){
 
-    if(indexSong > 0){
+    if(indexSong > 0){        
         indexSong--;
         audio.src = "./assets/music/" + songs[indexSong].source_audio;
         playertitle_author.textContent = songs[indexSong].singer
         playertitle_name.textContent = songs[indexSong].name
         imgplayer.src = "./assets/img/" + songs[indexSong].image
         audio.play();
-        playbtn.className = "fa-solid fa-pause";
         
     }
 }
@@ -280,14 +288,14 @@ var playlistBlock = document.querySelector('.play-list');
 playlistbtn.onclick = function(){
     
 
-    if(playlistBlock.style.display == '' || playlistBlock.style.display == 'none'){
-        playlistBlock.style.display = 'block'
-        playlistbtn.classList.add('color-f50')
+    if(playlistBlock.className.includes('open') == true){
+        playlistBlock.classList.remove('open')
+        playlistbtn.classList.remove('color-f50')
 
     }
     else{
-        playlistBlock.style.display = 'none'
-        playlistbtn.classList.remove('color-f50')
+        playlistbtn.classList.add('color-f50')
+        playlistBlock.classList.add('open')
 
     }
 }
@@ -295,8 +303,107 @@ playlistbtn.onclick = function(){
 
 var closePlaylistButton = document.querySelector('.play-list-header_close');
 closePlaylistButton.onclick = function (){
-    playlistBlock.style.display = 'none'
+    // playlistBlock.style.display = 'none'
     playlistbtn.classList.remove('color-f50')
+    playlistBlock.classList.remove('open')
+
 
 }
+
+
+
+
+LoadMusic = function(nameSong, Singer, urlImg , urlAudio){
+    audio.src = "./assets/music/" + urlAudio;
+    playertitle_author.textContent = Singer;
+    playertitle_name.textContent = nameSong
+    imgplayer.src = "./assets/img/" +  urlImg
+}
+
+
+    const playlis_modify = document.querySelectorAll('.play-list-item_status-btn i')
+
+
+    Modify_Playlist_Playbtn = function() {
+
+        for(var i = 0 ; i < playlis_modify.length ; i++){
+            playlis_modify[i].classList.remove('fa-pause')
+            playlis_modify[i].classList.add('fa-play')
+
+        }
+    }
+
+
+class PlayerMusic {
+
+    constructor(){
+        this.player_volume.value = 100;
+    }
+
+    player_playbtn = document.getElementById('play-btn');
+    player_backbtn = document.querySelectorAll('.player-control_btn-group button')[0];
+    player_nextbtn = document.querySelectorAll('.player-control_btn-group button')[2];
+    player_sufferbtn = document.querySelectorAll('.player-control_btn-group button')[3];
+    player_repeatbtn = document.querySelectorAll('.player-control_btn-group button')[4];
+    
+    player_currentTime = document.querySelector('.timeline_time span');
+    player_totalTime = document.querySelector('.total-time span');
+    plaeyr_range = document.getElementById('range-player');
+
+    
+    
+    player_img = document.querySelector('.playing-info_img img');
+    player_songName = document.querySelector('.playing-info_title a');
+    player_singerName = document.querySelector('.playing-info_title span');
+    player_audio = document.getElementById('audio')
+
+
+    player_volume = document.querySelector('#range-volume');
+
+
+
+
+
+    LoadMusic(nameSong, Singer, urlImg , urlAudio){
+        this.player_audio.src = "./assets/music/" + urlAudio;
+        this.player_singerName.textContent = Singer;
+        this.player_songName.textContent = nameSong
+        this.player_img.src = "./assets/img/" +  urlImg
+    }
+
+    
+    NextMusic(){
+        if(indexSong < songs.length -1 ){
+            indexSong -- ;
+            
+        }
+    }
+
+    BackMusic(){
+       if(indexSong > 0 ){
+            indexSong--;
+       }
+    }
+
+
+   
+    ChangeVolume(){
+        this.player_volume.style.background = "linear-gradient(90deg,#f50 " + this.player_volume.value +"%" +",#ccc " + this.player_volume.value +"%";
+        this.player_audio.volume = this.player_volume.value/100
+    }
+
+
+
+
+
+
+}   
+
+
+var player = new PlayerMusic();
+player.player_volume.oninput = function(){
+    player.ChangeVolume();
+}
+    
+
 
