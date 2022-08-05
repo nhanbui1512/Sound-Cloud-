@@ -8,26 +8,11 @@ var TextTotalTime = document.querySelector('.total-time span')
 var playbtn = document.getElementById('play-btn')
 const rangePlayer = document.getElementById('range-player')
 const timeupdate = document.querySelector('.timeline_time span')
-// var volume = document.querySelector('#range-volume')
 
 
 var playlist_playbtns = document.querySelectorAll('.play-list-item_status-btn i')
 
 
-// volume.value = 100;
-// volume.oninput = function(){
-//    volume.style.background = "linear-gradient(90deg,#f50 " + volume.value +"%" +",#ccc " + volume.value +"%";
-//    audio.volume = volume.value/100
-
-// }
-
-
-rangePlayer.oninput = function (){
-    var percentValue = rangePlayer.value;
-    var totaltime = audio.duration;
-    var second = percentValue*totaltime /100;
-    audio.currentTime = second;
-}
 
 
 function formatTime(sec_num) {
@@ -47,46 +32,11 @@ function formatTime(sec_num) {
 }
 
 
-audio.onloadeddata = function(){
-    TextTotalTime.textContent = formatTime(audio.duration)
-    rangePlayer.value = 0;
-
-    
-
-
-}
-
-
-audio.ontimeupdate = function (){
-    
-    var totaltime = audio.duration
-    var percent = audio.currentTime/totaltime *100
-    rangePlayer.value = percent
-    rangePlayer.style.background = "linear-gradient(90deg,#f50 " + percent +"%" +",#ccc " + percent +"%";
-    timeupdate.textContent = formatTime(audio.currentTime)
-}
-
-audio.onended = function (){
-    playbtn.classList.remove('fa-pause')
-    playbtn.classList.add('fa-play')
-    Next();
-    
-}
 
 
 
 
-function Repeat(){
-    var repeatbtn = document.querySelectorAll('.player-control_btn-group button')[4]
-    if(audio.loop == false){
-        repeatbtn.classList.add('color-f50')
-        audio.loop = true
-    }
-    else{
-        repeatbtn.classList.remove('color-f50')
-        audio.loop = false;
-    }
-}
+
 
 function shuffle(){
     var shufflebtn = document.querySelectorAll('.player-control_btn-group button')[3]
@@ -230,58 +180,6 @@ const songs = [
     
 
 
-
-function PlayMusic (){
-        
-    if(audio.paused == true){
-        
-        audio.play()
-        playbtn.classList.remove('fa-play')
-        playbtn.classList.add('fa-pause')
-    }
-    else{
-        audio.pause()
-        playbtn.classList.remove('fa-pause')
-        playbtn.classList.add('fa-play')
-    }
-    
-    
-    
-}
-
-
-function Next (){
-    if(indexSong < songs.length - 1){
-        
-        
-        
-        indexSong++;
-        audio.src = "./assets/music/" + songs[indexSong].source_audio;
-        playertitle_author.textContent = songs[indexSong].singer
-        playertitle_name.textContent = songs[indexSong].name
-        imgplayer.src = "./assets/img/" + songs[indexSong].image
-        audio.play();
-
-       
-    }
-}
-
-function Back(){
-
-    if(indexSong > 0){        
-        indexSong--;
-        audio.src = "./assets/music/" + songs[indexSong].source_audio;
-        playertitle_author.textContent = songs[indexSong].singer
-        playertitle_name.textContent = songs[indexSong].name
-        imgplayer.src = "./assets/img/" + songs[indexSong].image
-        audio.play();
-        
-    }
-}
-
-
-
-
 var playlistbtn = document.getElementById('play-list-btn');
 var playlistBlock = document.querySelector('.play-list');
 
@@ -302,8 +200,9 @@ playlistbtn.onclick = function(){
 
 
 var closePlaylistButton = document.querySelector('.play-list-header_close');
+
+
 closePlaylistButton.onclick = function (){
-    // playlistBlock.style.display = 'none'
     playlistbtn.classList.remove('color-f50')
     playlistBlock.classList.remove('open')
 
@@ -338,17 +237,19 @@ class PlayerMusic {
 
     constructor(){
         this.player_volume.value = 100;
+        this.player_range.value = 0;
     }
 
-    player_playbtn = document.getElementById('play-btn');
     player_backbtn = document.querySelectorAll('.player-control_btn-group button')[0];
+    player_playbtn = document.querySelectorAll('.player-control_btn-group button')[1];
+    player_playbtn_icon = document.getElementById('play-btn')
     player_nextbtn = document.querySelectorAll('.player-control_btn-group button')[2];
     player_sufferbtn = document.querySelectorAll('.player-control_btn-group button')[3];
     player_repeatbtn = document.querySelectorAll('.player-control_btn-group button')[4];
     
     player_currentTime = document.querySelector('.timeline_time span');
     player_totalTime = document.querySelector('.total-time span');
-    plaeyr_range = document.getElementById('range-player');
+    player_range = document.getElementById('range-player');
 
     
     
@@ -366,23 +267,68 @@ class PlayerMusic {
 
     LoadMusic(nameSong, Singer, urlImg , urlAudio){
         this.player_audio.src = "./assets/music/" + urlAudio;
-        this.player_singerName.textContent = Singer;
-        this.player_songName.textContent = nameSong
-        this.player_img.src = "./assets/img/" +  urlImg
+        this.player_singerName.innerText = Singer;
+        this.player_songName.innerText = nameSong
+        this.player_img.src = "./assets/img/" +  urlImg 
     }
 
+    PlayMusic (){
+    
+        audio.play()
+        // this.player_playbtn_icon.classList.remove('fa-play')
+        // this.player_playbtn_icon.classList.add('fa-pause')
+        
+    }
+
+    PauseMusic(){
+        audio.pause();
+        // this.player_playbtn_icon.classList.remove('fa-pause')
+        // this.player_playbtn_icon.classList.add('fa-play')
+
+    }
     
     NextMusic(){
         if(indexSong < songs.length -1 ){
-            indexSong -- ;
-            
+            indexSong ++ ;
+            this.LoadMusic(songs[indexSong].name, songs[indexSong].singer , songs[indexSong].image , songs[indexSong].source_audio)
+            this.player_audio.play();
         }
     }
 
     BackMusic(){
        if(indexSong > 0 ){
-            indexSong--;
+            indexSong --;
+            this.LoadMusic(songs[indexSong].name, songs[indexSong].singer , songs[indexSong].image , songs[indexSong].source_audio)
+            this.player_audio.play();
        }
+    }
+
+    Repeat(){
+        
+        if(audio.loop == false){
+            this.player_repeatbtn.classList.add('color-f50')
+            this.player_audio.loop = true
+        }
+        else{
+            this.player_repeatbtn.classList.remove('color-f50')
+            this.player_audio.loop = false;
+        }
+    }
+
+    ChangeTimePlayer(){
+        var percentValue = this.player_range.value;
+        var totaltime = this.player_audio.duration;
+        var second = percentValue*totaltime /100;
+        this.player_audio.currentTime = second;
+    }
+
+    UpDateTime(){
+        var totaltime = this.player_audio.duration
+        var percent = this.player_audio.currentTime/totaltime *100
+        this.player_range.value = percent
+        this.player_range.style.background = "linear-gradient(90deg,#f50 " + percent +"%" +",#ccc " + percent +"%";
+        this.player_currentTime.textContent = formatTime(audio.currentTime)
+
     }
 
 
@@ -392,7 +338,9 @@ class PlayerMusic {
         this.player_audio.volume = this.player_volume.value/100
     }
 
+    MuteVolume(){
 
+    }
 
 
 
@@ -400,10 +348,102 @@ class PlayerMusic {
 }   
 
 
-var player = new PlayerMusic();
-player.player_volume.oninput = function(){
-    player.ChangeVolume();
-}
-    
+    var player = new PlayerMusic();
+    player.player_volume.oninput = function(){
+        player.ChangeVolume();
+    }
 
+    player.player_backbtn .onclick = function(){
+        player.BackMusic();
+
+    }
+    player.player_nextbtn.onclick = function(){
+        player.NextMusic();
+
+    }
+
+
+        
+    player.player_audio.ontimeupdate = function(){
+        player.UpDateTime();
+    }
+
+    player.player_audio.onloadeddata = function(){
+        player.player_range.value = 0;
+        player.player_totalTime.textContent = formatTime(player.player_audio.duration)
+        player.player_range.value = 0;
+
+    }
+    player.player_range.oninput = function(){
+        player.ChangeTimePlayer();
+    }
+
+    player.player_nextbtn.onclick = function(){
+        player.NextMusic();
+    }
+
+    player. player_playbtn.onclick = function(){
+        if(player.player_audio.paused == true){
+            player.PlayMusic();
+        }
+        else{
+            player.PauseMusic();
+        }
+    }
+
+    player.player_audio.onplay = function(){
+        player.player_playbtn_icon.classList.remove('fa-play')
+        player.player_playbtn_icon.classList.add('fa-pause')
+    }
+    player.player_audio.onpause = function(){
+        player.player_playbtn_icon.classList.remove('fa-pause')
+        player.player_playbtn_icon.classList.add('fa-play')
+    }
+
+    player.player_repeatbtn.onclick = function(){
+        player.Repeat()
+    }
+
+
+
+    Follow = function(nodeElement){
+
+        var icon = nodeElement.querySelector('i')
+        var statusname = nodeElement.querySelector('span')
+
+        icon.classList.remove('fa-user-plus')
+        icon.classList.add('fa-user-check')
+        nodeElement .classList.add('color-f50')
+        nodeElement.classList.add('bordercolor-f50')
+        statusname.textContent = 'Following'
+    }
+
+
+    Unfollow = function(nodeElement){
+        var icon = nodeElement.querySelector('i')
+        var statusname = nodeElement.querySelector('span')
+
+        icon.classList.remove('fa-user-check')
+        icon.classList.add('fa-user-plus')
+        nodeElement .classList.remove('color-f50')
+        nodeElement.classList.remove('bordercolor-f50')
+        statusname.textContent = 'Follow'
+    }
+
+
+    var followbtn = document.querySelectorAll('.follow-btn');
+    
+    for (let i = 0; i < followbtn.length; i++) {
+        followbtn[i].onclick = function(){
+            var statusName = followbtn[i].querySelector('span');
+            
+            if(statusName.textContent == 'Follow'){
+                Follow(followbtn[i])
+
+            }
+            else{
+                Unfollow(followbtn[i])
+            }
+        }
+    }
 

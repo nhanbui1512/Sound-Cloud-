@@ -9,6 +9,9 @@
 html{
     font-family:Helvetica;
 }
+body{
+    /* overflow-x: hidden; */
+}
 .witdh-171{
     width: 171px !important;
 }
@@ -35,6 +38,10 @@ html{
 }
 .color-38d{
     color: #38d !important;
+}
+
+.bordercolor-f50{
+    border-color: #f50 !important;
 }
 .radius-50{
     border-radius: 50% !important;
@@ -646,7 +653,7 @@ html{
 }
 
 
-.player-control{
+.player-control{ 
     position: fixed;
     bottom: 0px;
     height: 49px;
@@ -734,6 +741,7 @@ html{
 }
 .playing-info{
     width: 365px;
+    height: 48px;
     padding: 8px 8px;
 
 }
@@ -1024,7 +1032,6 @@ html{
     background-color: #f50;
     border-radius: 100%;
     cursor: pointer;
-
 }  
 
 .player-control_volume-btn:hover .control-volume {
