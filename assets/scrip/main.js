@@ -10,7 +10,7 @@ const rangePlayer = document.getElementById('range-player')
 const timeupdate = document.querySelector('.timeline_time span')
 
 
-var playlist_playbtns = document.querySelectorAll('.play-list-item_status-btn i')
+
 
 
 
@@ -51,19 +51,6 @@ function shuffle(){
     }
 }
 
-function MuteAudio(){
-    var mutebtn = document.querySelector('.player-control_volume-btn i')
-    
-    if(audio.muted == false){
-        audio.muted = true;
-        mutebtn.className = "fa-solid fa-volume-xmark";
-        
-    }
-    else{
-        audio.muted = false;
-        mutebtn.className = "fa-solid fa-volume-high"
-    }
-}
 
 var indexSong = 0;
 const songs = [
@@ -210,8 +197,6 @@ closePlaylistButton.onclick = function (){
 }
 
 
-
-
 LoadMusic = function(nameSong, Singer, urlImg , urlAudio){
     audio.src = "./assets/music/" + urlAudio;
     playertitle_author.textContent = Singer;
@@ -260,7 +245,7 @@ class PlayerMusic {
 
 
     player_volume = document.querySelector('#range-volume');
-
+    player_mutebtn = document.querySelector('.player-control_volume-btn button');
 
 
 
@@ -274,16 +259,12 @@ class PlayerMusic {
 
     PlayMusic (){
     
-        audio.play()
-        // this.player_playbtn_icon.classList.remove('fa-play')
-        // this.player_playbtn_icon.classList.add('fa-pause')
+        audio.play();
         
     }
 
     PauseMusic(){
         audio.pause();
-        // this.player_playbtn_icon.classList.remove('fa-pause')
-        // this.player_playbtn_icon.classList.add('fa-play')
 
     }
     
@@ -340,6 +321,17 @@ class PlayerMusic {
 
     MuteVolume(){
 
+        var muteicon = this.player_mutebtn.querySelector('i');
+
+        if(this.player_audio.muted == false){
+            this.player_audio.muted = true;
+            muteicon.className = "fa-solid fa-volume-xmark";
+            
+        }
+        else{
+            this.player_audio.muted = false;
+            muteicon.className = "fa-solid fa-volume-high"
+        }
     }
 
 
@@ -368,11 +360,13 @@ class PlayerMusic {
         player.UpDateTime();
     }
 
+   
+
     player.player_audio.onloadeddata = function(){
         player.player_range.value = 0;
         player.player_totalTime.textContent = formatTime(player.player_audio.duration)
         player.player_range.value = 0;
-
+        
     }
     player.player_range.oninput = function(){
         player.ChangeTimePlayer();
@@ -381,19 +375,25 @@ class PlayerMusic {
     player.player_nextbtn.onclick = function(){
         player.NextMusic();
     }
+ 
 
     player. player_playbtn.onclick = function(){
         if(player.player_audio.paused == true){
             player.PlayMusic();
+            OnPauseIcon(indexSong)
         }
         else{
             player.PauseMusic();
+            OffPauseIcon();
         }
     }
 
     player.player_audio.onplay = function(){
         player.player_playbtn_icon.classList.remove('fa-play')
         player.player_playbtn_icon.classList.add('fa-pause')
+
+        OffPauseIcon();
+        OnPauseIcon(indexSong)
     }
     player.player_audio.onpause = function(){
         player.player_playbtn_icon.classList.remove('fa-pause')
@@ -404,6 +404,10 @@ class PlayerMusic {
         player.Repeat()
     }
 
+
+    player.player_mutebtn.onclick = function(){
+        player.MuteVolume();
+    }
 
 
     Follow = function(nodeElement){
@@ -447,3 +451,67 @@ class PlayerMusic {
         }
     }
 
+
+
+    var playlist_playbtns = document.querySelectorAll('.play-list-item_status-btn')
+
+
+    OffPauseIcon = function(){
+        var playlist_playicons = document.querySelectorAll('.play-list-item_status-btn i')
+
+        for (let index = 0; index < playlist_playicons.length; index++) {
+        
+            if(playlist_playicons[index].className.includes('fa-pause') == true ){
+                playlist_playicons[index].classList.remove('fa-pause')
+                playlist_playicons[index].classList.add('fa-play')
+            }        
+        }
+    }
+
+
+    OnPauseIcon = function( index ){
+        var playlist_playicons = document.querySelectorAll('.play-list-item_status-btn i')
+        playlist_playicons[index].classList.remove('fa-play')
+        playlist_playicons[index].classList.add('fa-pause')
+    }
+    
+
+    for (let i = 0; i < playlist_playbtns.length; i++) {
+
+        playlist_playbtns[i].onclick = function(){
+            OffPauseIcon();
+            indexSong = i;
+
+            var icon = playlist_playbtns[i].querySelector('i');
+            icon.classList.remove('fa-play')
+            icon.classList.add('fa-pause')
+            player.LoadMusic(songs[indexSong].name, songs[indexSong].singer , songs[indexSong].image , songs[indexSong].source_audio);
+            player.player_audio.play();
+        }
+        
+    }
+
+
+    var slider_rightbtns = document.querySelectorAll('.right-btn')
+    for (let index = 0; index < slider_rightbtns.length; index++) {
+        
+        slider_rightbtns[index].onmouseover = function(){
+            var slider = slider_rightbtns[index].parentElement.querySelector('.slider')
+            slider.classList.add('vibrate')
+
+        }
+
+        
+    }
+
+
+    for (let index = 0; index < slider_rightbtns.length; index++) {
+        
+        slider_rightbtns[index].onmouseout = function(){
+            var slider = slider_rightbtns[index].parentElement.querySelector('.slider')
+            slider.classList.remove('vibrate')
+
+        }
+
+        
+    }
