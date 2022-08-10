@@ -86,6 +86,9 @@ html{
 .background-black{
     background-color: #000;
 }
+.background-333{
+    background-color: #333 !important;
+}
 .header-container{
     margin: 0 140px;
     height: 100%;
@@ -145,6 +148,10 @@ html{
 .search-input:focus{
     background-color: #fff;
 }
+.search-input:focus ~.search-result-container{
+    display: block;
+}
+
 .search-button{
     position: absolute;
     height: 30px;
@@ -153,6 +160,32 @@ html{
     border: none;
     cursor: pointer;
     color: #666;
+}
+
+.search-result-container{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 95%;
+    background-color: #000;
+    color: rgb(174, 174, 174);
+    list-style: none;
+    display: none;
+    animation: fade 0.5s ease;
+
+}
+.search-result-item{
+    font-size: 13px;
+    font-weight: 100;
+    height: 40px;
+    cursor: pointer;
+    padding: 12px 0px;
+}
+.search-result-item:hover{
+    background-color: #333;
+}
+.search-result-item_icon{
+    padding: 12px;
 }
 
 .header-right{
@@ -1059,6 +1092,15 @@ html{
     }
     100%{
         transform: translateX(0);
+    }
+}
+
+@keyframes fade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
     }
 }
 

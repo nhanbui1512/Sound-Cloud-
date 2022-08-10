@@ -197,33 +197,12 @@ closePlaylistButton.onclick = function (){
 }
 
 
-LoadMusic = function(nameSong, Singer, urlImg , urlAudio){
-    audio.src = "./assets/music/" + urlAudio;
-    playertitle_author.textContent = Singer;
-    playertitle_name.textContent = nameSong
-    imgplayer.src = "./assets/img/" +  urlImg
-}
 
-
-    const playlis_modify = document.querySelectorAll('.play-list-item_status-btn i')
-
-
-    Modify_Playlist_Playbtn = function() {
-
-        for(var i = 0 ; i < playlis_modify.length ; i++){
-            playlis_modify[i].classList.remove('fa-pause')
-            playlis_modify[i].classList.add('fa-play')
-
-        }
-    }
 
 
 class PlayerMusic {
 
-    constructor(){
-        this.player_volume.value = 100;
-        this.player_range.value = 0;
-    }
+    
 
     player_backbtn = document.querySelectorAll('.player-control_btn-group button')[0];
     player_playbtn = document.querySelectorAll('.player-control_btn-group button')[1];
@@ -247,7 +226,10 @@ class PlayerMusic {
     player_volume = document.querySelector('#range-volume');
     player_mutebtn = document.querySelector('.player-control_volume-btn button');
 
-
+    constructor(){
+        this.player_volume.value = 100;
+        this.player_range.value = 0;
+    }
 
 
     LoadMusic(nameSong, Singer, urlImg , urlAudio){
@@ -341,6 +323,8 @@ class PlayerMusic {
 
 
     var player = new PlayerMusic();
+
+
     player.player_volume.oninput = function(){
         player.ChangeVolume();
     }
@@ -355,7 +339,6 @@ class PlayerMusic {
     }
 
 
-        
     player.player_audio.ontimeupdate = function(){
         player.UpDateTime();
     }
@@ -364,17 +347,13 @@ class PlayerMusic {
 
     player.player_audio.onloadeddata = function(){
         player.player_range.value = 0;
-        player.player_totalTime.textContent = formatTime(player.player_audio.duration)
-        player.player_range.value = 0;
+        player.player_totalTime.textContent = formatTime(player.player_audio.duration);
         
     }
     player.player_range.oninput = function(){
         player.ChangeTimePlayer();
     }
 
-    player.player_nextbtn.onclick = function(){
-        player.NextMusic();
-    }
  
 
     player. player_playbtn.onclick = function(){
@@ -412,6 +391,7 @@ class PlayerMusic {
 
     Follow = function(nodeElement){
 
+        
         var icon = nodeElement.querySelector('i')
         var statusname = nodeElement.querySelector('span')
 
@@ -424,6 +404,7 @@ class PlayerMusic {
 
 
     Unfollow = function(nodeElement){
+
         var icon = nodeElement.querySelector('i')
         var statusname = nodeElement.querySelector('span')
 
@@ -510,8 +491,21 @@ class PlayerMusic {
         slider_rightbtns[index].onmouseout = function(){
             var slider = slider_rightbtns[index].parentElement.querySelector('.slider')
             slider.classList.remove('vibrate')
+            
 
         }
 
+        
+    }
+
+
+    var searchInput = document.querySelector('.search-input')
+    var searchResult = document.querySelector('.search-result-item')
+
+    searchInput.oninput = function(){
+    
+        var searchFor = searchResult.querySelectorAll('span')[1]
+        searchFor.textContent = "Search for " + '" '+ searchInput.value + ' "' 
+        
         
     }
