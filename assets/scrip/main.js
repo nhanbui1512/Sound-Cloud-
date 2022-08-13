@@ -54,6 +54,16 @@ function shuffle(){
 
 var indexSong = 0;
 const songs = [
+
+    {
+        name: 'Lost Sky',
+        singer: 'NCS',
+        source_audio: 'y2mate.com - Lost Sky  Dreams pt II feat Sara Skinner NCS Release.mp3.webm',
+        image: 'sddefault.jpg'
+
+    }
+    ,
+
     {
         name: 'JustaTee x Binz',
         singer: 'Cơn Mưa Cuối',
@@ -156,6 +166,8 @@ const songs = [
         image: 'artworks-oKwAaDWD59mIqHit-zwH5Jw-t500x500.jpg'
 
     }
+
+    
 
     
 ]
@@ -473,39 +485,127 @@ class PlayerMusic {
     }
 
 
-    var slider_rightbtns = document.querySelectorAll('.right-btn')
-    for (let index = 0; index < slider_rightbtns.length; index++) {
-        
+   
+
+   class Slider {
+
+        sliders = document.querySelectorAll('.slider')
+
+        listModul(index){
+            return this.sliders[index].querySelectorAll('.modul-left_item')
+        }
+
+        tunrOffAllMoreOption(indexSlider){
+
+            for (let i = 0; i < this.listModul(indexSlider).length; i++) {
+                var modul = this.listModul(indexSlider)[i]
+                var background = modul.querySelector('.modul-left_backgroud')
+                var groupBtn = modul.querySelector('.modul-left_option-group')
+                var addOption = modul.querySelector('.modul-left_option-more')
+
+                if(background.className.includes('open')){
+                    background.classList.remove('open')
+                    groupBtn.classList.remove('open')
+                    addOption.classList.remove('open')
+                    break;
+                }
+            }
+        }
+
+        nextSlider(index){
+            var leftButton = this.sliders[index].parentElement.parentElement.querySelector('.left-btn')
+            this.sliders[index].classList.add('slide-left')
+            leftButton.classList.add('open')
+        }
+
+        backSlider(index){
+            var leftButton = this.sliders[index].parentElement.parentElement.querySelector('.left-btn')
+            this.sliders[index].classList.remove('slide-left')
+            leftButton.classList.remove('open')
+        }
+
+
+   }
+
+   var slider1 = new Slider;
+
+   var slider_rightbtns = document.querySelectorAll('.right-btn')
+   var slider_leftbtns =document.querySelectorAll('.left-btn')
+   for (let index = 0; index < slider_rightbtns.length; index++) {
+
+        slider_rightbtns[index].onclick = function(){
+            slider1.nextSlider(index)
+            slider1.tunrOffAllMoreOption(index)
+            // var slider = slider_rightbtns[index].parentElement.querySelector('.slider')
+            // slider.classList.add('slide-left')
+        }
+
+        slider_leftbtns[index].onclick = function(){
+            slider1.backSlider(index)
+            slider1.tunrOffAllMoreOption(index)
+
+        }
+       
         slider_rightbtns[index].onmouseover = function(){
             var slider = slider_rightbtns[index].parentElement.querySelector('.slider')
             slider.classList.add('vibrate')
 
-        }
-
-        
-    }
-
-
-    for (let index = 0; index < slider_rightbtns.length; index++) {
-        
-        slider_rightbtns[index].onmouseout = function(){
-            var slider = slider_rightbtns[index].parentElement.querySelector('.slider')
-            slider.classList.remove('vibrate')
-            
-
-        }
-
-        
-    }
+       }
+       
+   }
 
 
-    var searchInput = document.querySelector('.search-input')
-    var searchResult = document.querySelector('.search-result-item')
 
-    searchInput.oninput = function(){
-    
-        var searchFor = searchResult.querySelectorAll('span')[1]
-        searchFor.textContent = "Search for " + '" '+ searchInput.value + ' "' 
-        
-        
-    }
+   for (let index = 0; index < slider_rightbtns.length; index++) {
+       
+       slider_rightbtns[index].onmouseout = function(){
+           var slider = slider_rightbtns[index].parentElement.querySelector('.slider')
+           slider.classList.remove('vibrate')
+           
+
+       }
+
+       
+   }
+
+
+   var searchInput = document.querySelector('.search-input')
+   var searchResult = document.querySelector('.search-result-item')
+
+   searchInput.oninput = function(){
+   
+       var searchFor = searchResult.querySelectorAll('span')[1]
+       searchFor.textContent = "Search for " + '" '+ searchInput.value + ' "' 
+       
+       
+   }
+
+
+
+
+   // Open MoreOption Of Slider
+   var mudulMoreBtns = document.querySelectorAll('.modul-left_morebtn')
+
+  for (let index = 0; index < mudulMoreBtns.length; index++) {
+       mudulMoreBtns[index].onclick = function(){
+           var modulBackground = document.querySelectorAll('.modul-left_backgroud')
+           var optionGroup = mudulMoreBtns[index].parentElement;
+           var moreOption = mudulMoreBtns[index].parentElement.querySelector('.modul-left_option-more')
+           
+           if(moreOption.className.includes('open') == true){
+           
+            // optionGroup.classList.remove('open')
+            // modulBackground[index].classList.remove('open')
+            // moreOption.classList.remove('open')   
+            slider1.tunrOffAllMoreOption(0)
+
+           }
+           else{
+            slider1.tunrOffAllMoreOption(0)
+            optionGroup.classList.add('open')
+            modulBackground[index].classList.add('open')
+            moreOption.classList.add('open')
+           }
+       }
+   
+  }

@@ -10,6 +10,7 @@ html{
     font-family:Helvetica;
 }
 
+
 .witdh-171{
     width: 171px !important;
 }
@@ -51,6 +52,9 @@ html{
     border-right: 1px solid #111;
 
 }
+.ml-4{
+    margin-left: 4px !important;
+}
 .margin-bottom-34{
     margin-bottom: 34px;
 }
@@ -59,6 +63,9 @@ html{
 }
 .padding-8-0{
     padding: 8px 0px;
+}
+.padding-4-2{
+    padding: 4px 2px !important;
 }
 .font-size-16{
     font-size: 16px !important;
@@ -206,6 +213,18 @@ html{
     flex: 2;
     justify-items: center;
     position: relative;
+
+
+    -moz-user-select: none !important;
+    -webkit-touch-callout: none!important;
+    -webkit-user-select: none!important;
+    -khtml-user-select: none!important;
+    -moz-user-select: none!important;
+    -ms-user-select: none!important;
+    user-select: none!important;
+
+
+    
 }
 .user-avatar{
     width: 26px;
@@ -237,6 +256,16 @@ html{
     border: 1px solid #ccc;
     box-shadow: 0px 0px 1px #000;
     display: none;
+
+
+    -moz-user-select: none !important;
+    -webkit-touch-callout: none!important;
+    -webkit-user-select: none!important;
+    -khtml-user-select: none!important;
+    -moz-user-select: none!important;
+    -ms-user-select: none!important;
+    user-select: none!important;
+    
 }
 .menu-left{
     left: 0;
@@ -396,22 +425,85 @@ html{
 .border-bottom{
     border-bottom: 1px solid #f2f2f2;
 }
+
+.radius-top{
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.radius-end{
+    border-bottom-left-radius:3px ;
+    border-bottom-right-radius: 3px;
+}
 .modul-left_item{
     width: 186px;
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
     padding-right: 20px;
+
+
+    -moz-user-select: none !important;
+    -webkit-touch-callout: none!important;
+    -webkit-user-select: none!important;
+    -khtml-user-select: none!important;
+    -moz-user-select: none!important;
+    -ms-user-select: none!important;
+    user-select: none!important;
+
 }
 .modul-left_item-container-img{
     width: 100%;
     height: 172px;
     box-shadow: 1px 1px 1px #ccc;
     margin: 0px 0px 0px 0px;
+    cursor: pointer;
 }
+
+.modul-left_backgroud{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 5%, rgba(0, 0, 0, 0.4) 111%);
+    display: none;
+}
+
+.modul-left_item-container-img:hover .modul-left_playbtn {
+    display: block;
+}
+.modul-left_item-container-img:hover .modul-left_option-group {
+    display: block;
+}
+.modul-left_item-container-img:hover .modul-left_backgroud {
+    display: block;
+}
+
+
 .modul-left_image{
     width: 100%;
     height: 100%;
+}
+
+.modul-left_playbtn{
+    position: absolute;
+    top: 40%;
+    left: 31%;
+    display: none;
+}
+.modul-left_playbtn-icon{
+    background-color: #f50;
+    border-radius: 50%;
+    padding: 13px 18px;
+    font-size: 30px !important;
+    color: #fff !important;
+}
+.modul-left_playbtn-icon:hover{
+    background-color: #f30;
+    cursor: pointer;
+}
+.modul-left_playbtn-icon i {
+    margin-left: 4px;
 }
 
 .modul-left_item a {
@@ -424,6 +516,14 @@ html{
 .modul-left_item span{
     color: #999;
     font-size: 12px;
+}
+
+
+.modul-left_option-group{
+    position: absolute;
+    bottom: 7px;
+    right: 6%;
+    display: none;
 }
 
 .slider{
@@ -1030,6 +1130,7 @@ html{
     cursor: pointer;
     display: none;
     z-index: 3;
+    animation: fade 0.3s ease;
 }
 .control-volume::after{
     content: "";
@@ -1087,7 +1188,7 @@ html{
         transform: translateX(0);
     }
     50%{
-        transform: translateX(-20px);
+        transform: translateX(-10px);
 
     }
     100%{
@@ -1105,10 +1206,36 @@ html{
 }
 
 .open{
-    display: block;
+    display: block !important;
 }
 
 
 .vibrate{
-    animation: vibrate 0.6s ease;
+    animation: vibrate 0.4s ease;
+}
+
+.modul-left_option-more {
+    position: absolute;
+    bottom: -58px;
+    right: -120px;
+    z-index: 99;
+    width: 140px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px #ccc;
+    display: none;
+
+}
+.modul-left_option-more button{
+    background-color: #fff;
+    border: none;
+    width: 100%;
+    padding: 6px 28px 6px 3px;
+    cursor: pointer;
+}
+.modul-left_option-more button:hover{
+    background-color: #f2f2f2;
+}
+.modul-left_option-more span{
+    color: #333 !important;
 }
