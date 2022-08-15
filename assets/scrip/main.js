@@ -53,7 +53,16 @@ function shuffle(){
 
 
 var indexSong = 0;
-const songs = [
+var songs = [
+
+    {
+        name: '3107',
+        singer: 'W/n ft Duongg x Nâu',
+        source_audio: '3107  Wn  Official Video  ft Nâu Duongg.mp3',
+        image: '3107.jpg'
+
+    }
+    ,
 
     {
         name: 'Lost Sky',
@@ -491,6 +500,10 @@ class PlayerMusic {
 
         sliders = document.querySelectorAll('.slider')
 
+        listMoreBtns(index){
+            return this.sliders[index].querySelectorAll('.modul-left_morebtn');
+        }
+
         listModul(index){
             return this.sliders[index].querySelectorAll('.modul-left_item')
         }
@@ -529,6 +542,8 @@ class PlayerMusic {
 
    var slider1 = new Slider;
 
+
+   // Next And Back Slide
    var slider_rightbtns = document.querySelectorAll('.right-btn')
    var slider_leftbtns =document.querySelectorAll('.left-btn')
    for (let index = 0; index < slider_rightbtns.length; index++) {
@@ -536,8 +551,6 @@ class PlayerMusic {
         slider_rightbtns[index].onclick = function(){
             slider1.nextSlider(index)
             slider1.tunrOffAllMoreOption(index)
-            // var slider = slider_rightbtns[index].parentElement.querySelector('.slider')
-            // slider.classList.add('slide-left')
         }
 
         slider_leftbtns[index].onclick = function(){
@@ -554,8 +567,7 @@ class PlayerMusic {
        
    }
 
-
-
+   // Vibrate Slide
    for (let index = 0; index < slider_rightbtns.length; index++) {
        
        slider_rightbtns[index].onmouseout = function(){
@@ -568,7 +580,7 @@ class PlayerMusic {
        
    }
 
-
+   // Search
    var searchInput = document.querySelector('.search-input')
    var searchResult = document.querySelector('.search-result-item')
 
@@ -577,26 +589,19 @@ class PlayerMusic {
        var searchFor = searchResult.querySelectorAll('span')[1]
        searchFor.textContent = "Search for " + '" '+ searchInput.value + ' "' 
        
-       
    }
 
 
-
-
-   // Open MoreOption Of Slider
-   var mudulMoreBtns = document.querySelectorAll('.modul-left_morebtn')
-
-  for (let index = 0; index < mudulMoreBtns.length; index++) {
-       mudulMoreBtns[index].onclick = function(){
-           var modulBackground = document.querySelectorAll('.modul-left_backgroud')
-           var optionGroup = mudulMoreBtns[index].parentElement;
-           var moreOption = mudulMoreBtns[index].parentElement.querySelector('.modul-left_option-more')
+   // Open MoreOption Of Slider 1
+    var mudulMoreBtns = document.querySelectorAll('.modul-left_morebtn')
+  for (let index = 0; index < slider1.listMoreBtns(0).length; index++) {
+        slider1.listMoreBtns(0)[index].onclick = function(){
+           var modulBackground = slider1.sliders[0].querySelectorAll('.modul-left_backgroud')
+           var optionGroup = slider1.listMoreBtns(0)[index].parentElement;
+           var moreOption = slider1.listMoreBtns(0)[index].parentElement.querySelector('.modul-left_option-more')
            
            if(moreOption.className.includes('open') == true){
-           
-            // optionGroup.classList.remove('open')
-            // modulBackground[index].classList.remove('open')
-            // moreOption.classList.remove('open')   
+             
             slider1.tunrOffAllMoreOption(0)
 
            }
@@ -609,3 +614,209 @@ class PlayerMusic {
        }
    
   }
+
+
+  for (let index = 0; index < slider1.listMoreBtns(1).length; index++) {
+    slider1.listMoreBtns(1)[index].onclick = function(){
+       var modulBackground = slider1.sliders[1].querySelectorAll('.modul-left_backgroud')
+       var optionGroup = slider1.listMoreBtns(1)[index].parentElement;
+       var moreOption = slider1.listMoreBtns(1)[index].parentElement.querySelector('.modul-left_option-more')
+       
+       if(moreOption.className.includes('open') == true){
+         
+        slider1.tunrOffAllMoreOption(1)
+
+       }
+       else{
+        slider1.tunrOffAllMoreOption(1)
+        optionGroup.classList.add('open')
+        modulBackground[index].classList.add('open')
+        moreOption.classList.add('open')
+       }
+   }
+
+}
+
+for (let index = 0; index < slider1.listMoreBtns(2).length; index++) {
+    slider1.listMoreBtns(2)[index].onclick = function(){
+       var modulBackground = slider1.sliders[2].querySelectorAll('.modul-left_backgroud')
+       var optionGroup = slider1.listMoreBtns(2)[index].parentElement;
+       var moreOption = slider1.listMoreBtns(2)[index].parentElement.querySelector('.modul-left_option-more')
+       
+       if(moreOption.className.includes('open') == true){
+         
+        slider1.tunrOffAllMoreOption(2)
+
+       }
+       else{
+        slider1.tunrOffAllMoreOption(2)
+        optionGroup.classList.add('open')
+        modulBackground[index].classList.add('open')
+        moreOption.classList.add('open')
+       }
+   }
+
+}
+
+
+const songs2 = [
+    
+    {
+        name: 'Chẳng Thể Tìm Được Em - Lofi',
+        singer: 'PhucXp ft. Freak D',
+        source_audio: '/lofi/Chẳng Thể Tìm Được Em  PhucXp ft Freak D  Official Audio.mp3',
+        image: 'artworks-yukyFaBjTlbbBrn6-yjfdgg-t500x500.jpg'
+
+    }
+    ,
+
+    {
+        name: 'Có Chắc Chia Tay Là Sẽ Quên - Lofi',
+        singer: 'Nguyễn Đăng Nguyên x Freak D',
+        source_audio: '/lofi/Có Chắc Chia Tay Là Sẽ Quên Lofi Ver  Nguyễn Đăng Nguyên x Freak D.mp3',
+        image: 'artworks-Z5c1Cn8wXVhb4uzB-VNLC1w-t500x500.jpg'
+
+    }
+    ,
+
+    {
+        name: 'Anh Đâu Đấy (Lofi Ver.)',
+        singer: 'Reddy x Freak D',
+        source_audio: '/lofi/Anh Đâu Đấy Lofi Ver  Reddy x Freak D.mp3',
+        image: 'artworks-6RbAzjsPzsd4oKWf-nfTxvg-t500x500.jpg'
+
+    }
+    ,
+
+    {
+        name: 'Gác Lại Âu Lo',
+        singer: 'Da LAB x Miu Lê x Freak D',
+        source_audio: '/lofi/Gác Lại Âu Lo  Da LAB x Miu Lê x Freak D.mp3',
+        image: 'tải xuống.jfif'
+
+    }
+    ,
+
+    {
+        name: 'Ai Đưa Em Về (Lofi Ver.)',
+        singer: 'Tia x Lê Thiện Hiếu x Freak D',
+        source_audio: '/lofi/Ai Đưa Em Về Lofi Ver  Tia x Lê Thiện Hiếu x Freak D.mp3',
+        image: 'artworks-000571150037-iq629h-t500x500.jpg'
+
+    }
+    ,
+
+    {
+        name: 'Bỏ Em Vào Balo (Lofi Ver.)',
+        singer: 'Tân Trần x Freak D',
+        source_audio: '/lofi/Bỏ Em Vào Balo Lofi Ver  Tân Trần x Freak D.mp3',
+        image: 'artworks-W1nAMF4Aoyvyokgw-4nbKAw-t500x500.jpg'
+
+    }
+    ,
+
+    {
+        name: 'Răng Khôn (Lofi Ver.)',
+        singer: ' Phí Phương Anh ft. Rin9 x Freak D',
+        source_audio: '/lofi/Răng Khôn Lofi Ver  Phí Phương Anh ft Rin9 x Freak D.mp3',
+        image: 'artworks-Ht6FrXh1pQjQGBXC-9isV4Q-t500x500.jpg'
+
+    }
+    ,
+
+    {
+        name: 'Tình Yêu Màu Hồng Lofi Ver',
+        singer: 'Hồ Văn Quý x Xám x Freak D',
+        source_audio: '/lofi/Tình Yêu Màu Hồng Lofi Ver  Hồ Văn Quý x Xám x Freak D.mp3',
+        image: 'artworks-l1pQjgvmEa60f4hO-3F0FoQ-t500x500.jpg'
+
+    }
+    ,
+    
+]
+
+
+    classListItem = function(urlIMG, Name, Singer){
+        var Item = document.createElement('div');
+        Item.className = 'play-list-item row relative';
+            var drag = document.createElement('div');
+            drag.className = 'play-list-item_drag-btn font-size-12';
+                var drag_icon = document.createElement('i');
+                drag_icon.className = 'fa-solid fa-bars'
+            drag.appendChild(drag_icon);
+
+            var item_img = document.createElement('div');
+            item_img.className = 'play-list-item_img relative';
+                var img = document.createElement('img');
+                img.src = urlIMG;
+
+                var statusbtn = document.createElement('div');
+                statusbtn.className = 'play-list-item_status-btn';
+                    var iconstatus = document.createElement('i');
+                    iconstatus.className = 'fa-solid fa-play';
+                statusbtn.appendChild(iconstatus);
+
+            item_img.appendChild(img);
+            item_img.appendChild(statusbtn);
+
+            var item_info = document.createElement('div');
+            item_info.className = 'play-list-item_info col'
+                var name = document.createElement('a');
+                name.innerText = Name;
+                var singer = document.createElement('span');
+                singer.innerText = Singer;
+            item_info.appendChild(name);
+            item_info.appendChild(singer);
+
+            var footer = document.createElement('div');
+            footer.className = 'play-list-item_footer relative';
+                var totaltime = document.createElement('span');
+                totaltime.className = 'play-list-item_total-time';
+                totaltime.innerText = '3:52';
+                
+                var itemgroup = document.createElement('div');
+                itemgroup.className = 'play-list-item_group-btn';
+                    var heart = document.createElement('button');
+                    heart.className = 'font-size-12  color-f50';
+                        var heart_icon = document.createElement('i')
+                        heart_icon.className = 'fa-solid fa-heart'
+                    heart.appendChild(heart_icon)
+
+                    var more = document.createElement('button');
+                    more.className = 'font-size-12';
+                        var more_icon = document.createElement('i')
+                        more_icon.className = 'fa-solid fa-ellipsis'
+                    more.appendChild(more_icon)
+                itemgroup.appendChild(heart)
+                itemgroup.appendChild(more)
+            
+            footer.appendChild(totaltime)
+            footer.appendChild(itemgroup)
+
+        Item.appendChild(drag)
+        Item.appendChild(item_img)
+        Item.appendChild(item_info)
+        Item.appendChild(footer)
+        
+
+        return Item;
+
+    }
+
+    for (let i = 0; i < songs2.length; i++) {
+        songs[i] = songs2[i]
+
+    }
+    
+
+    for (let i = 0; i < songs2.length; i++) {
+        
+        var test = classListItem('./assets/img/' + songs2[i].image ,songs2[i].name,songs2[i].singer)
+
+        document.querySelector('.play-list-container .col').appendChild(test)
+
+    }
+
+
+
+    

@@ -1239,3 +1239,24 @@ html{
 .modul-left_option-more span{
     color: #333 !important;
 }
+
+.modul-left_final{
+    right: 0px !important;
+}
+.list-music_playbtn{
+    position: absolute;
+    background-color: #f50;
+    padding: 16px 19px;
+    color: #fff;
+    border-radius: 100%;
+    top: 28%;
+    left: 30%;
+    cursor: pointer;
+}
+.list-music_playbtn:hover{
+    background-color: #f30 ;
+}
+.list-music_playbtn i{
+    font-size: 24px !important;
+    margin-left: 2px;
+}
