@@ -384,7 +384,7 @@ class PlayerMusic {
         }
         else{
             player.PauseMusic();
-            OffPauseIcon();
+            // OffPauseIcon();
         }
     }
 
@@ -395,9 +395,20 @@ class PlayerMusic {
         OffPauseIcon();
         OnPauseIcon(indexSong)
     }
-    player.player_audio.onpause = function(){
+
+    // player.player_audio.addEventListener('play', function(){
+    //     player.player_playbtn_icon.classList.remove('fa-play')
+    //     player.player_playbtn_icon.classList.add('fa-pause')
+
+    //     OffPauseIcon();
+    //     OnPauseIcon(indexSong)
+    // })
+
+
+    player.player_audio.onpause = () =>{
         player.player_playbtn_icon.classList.remove('fa-pause')
         player.player_playbtn_icon.classList.add('fa-play')
+        OffPauseIcon();
     }
 
     player.player_repeatbtn.onclick = function(){
@@ -717,7 +728,7 @@ const songs2 = [
 
     {
         name: 'Răng Khôn (Lofi Ver.)',
-        singer: ' Phí Phương Anh ft. Rin9 x Freak D',
+        singer: 'Phí Phương Anh ft. Rin9 x Freak D',
         source_audio: '/lofi/Răng Khôn Lofi Ver  Phí Phương Anh ft Rin9 x Freak D.mp3',
         image: 'artworks-Ht6FrXh1pQjQGBXC-9isV4Q-t500x500.jpg'
 
@@ -736,7 +747,7 @@ const songs2 = [
 ]
 
 
-    classListItem = function(urlIMG, Name, Singer){
+    classListItem = function(urlIMG, Name, Singer,urlAudio, index){
         var Item = document.createElement('div');
         Item.className = 'play-list-item row relative';
             var drag = document.createElement('div');
@@ -748,7 +759,7 @@ const songs2 = [
             var item_img = document.createElement('div');
             item_img.className = 'play-list-item_img relative';
                 var img = document.createElement('img');
-                img.src = urlIMG;
+                img.src = './assets/img/' + urlIMG;
 
                 var statusbtn = document.createElement('div');
                 statusbtn.className = 'play-list-item_status-btn';
@@ -799,24 +810,108 @@ const songs2 = [
         Item.appendChild(footer)
         
 
+        statusbtn.addEventListener('click' , function(){
+            player.LoadMusic(Name, Singer ,urlIMG , urlAudio);
+            indexSong = index;
+            player.player_audio.play();
+        })
+
         return Item;
 
     }
 
-    for (let i = 0; i < songs2.length; i++) {
-        songs[i] = songs2[i]
+
+
+    changePlayList = function( songList ){
+        songs = []
+        for (let i = 0; i < songList.length; i++) {
+            songs[i] = songList[i]
+        }
+
+        document.querySelector('.play-list-container .col').innerHTML = ''
+
+        for (let i = 0; i < songs2.length; i++) {
+        
+            var test = classListItem(songs2[i].image ,songs2[i].name,songs2[i].singer, songs2[i].source_audio , i)
+            document.querySelector('.play-list-container .col').appendChild(test)
+    
+        }
+        
+        indexSong = 0;
+        player.LoadMusic(songs[indexSong].name, songs[indexSong].singer , songs[indexSong].image , songs[indexSong].source_audio);
+        player.player_audio.play();
 
     }
+
+
+
+
+
+    var listMusic_playbtn = document.querySelector('.list-music_playbtn');
+    listMusic_playbtn.setAttribute("first" , true)
+    var item = document.querySelectorAll('.list-music-item')
+
+    function OffItemPlaying(){
+        for (let i = 0; i < item.length; i++) {
+            if(item[i].className.includes('list-music-item--playing')){
+                item[i].classList.remove('list-music-item--playing')
+            }
+            
+        }
+    }
+
+
+    listMusic_playbtn.addEventListener('click', function(){
+        var icon = listMusic_playbtn.querySelector('i')
+
+        player.player_audio.addEventListener('pause', function(){
+            icon.classList.remove('fa-pause');
+            icon.classList.add('fa-play');
+            OffItemPlaying();
+
+
+        })
+
+        player.player_audio.addEventListener('loadeddata', function(){
+            OffItemPlaying();
+            item[indexSong].classList.add('list-music-item--playing')
+            
+        })
+
+        player.player_audio.addEventListener('play', function(){
+            icon.classList.remove('fa-play');
+            icon.classList.add('fa-pause');
+            item[indexSong].classList.add('list-music-item--playing')
+        })
+
+
+
+        if(listMusic_playbtn.getAttribute('first') == 'true' ){
+            changePlayList(songs2);
+            listMusic_playbtn.setAttribute('first', false)
+            
+        }
+        else{
+
+            if(icon.className.includes('fa-play')){
+    
+                OffItemPlaying();
+                item[indexSong].classList.add('list-music-item--playing')
+                player.player_audio.play();
+
+            }
+            else{
+                OffItemPlaying();
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+                player.player_audio.pause();
+                
+            }
+        }
+        
+
     
 
-    for (let i = 0; i < songs2.length; i++) {
-        
-        var test = classListItem('./assets/img/' + songs2[i].image ,songs2[i].name,songs2[i].singer)
-
-        document.querySelector('.play-list-container .col').appendChild(test)
-
-    }
-
-
+    })
 
     
