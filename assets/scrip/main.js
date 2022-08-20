@@ -669,13 +669,34 @@ for (let index = 0; index < slider1.listMoreBtns(2).length; index++) {
 
 }
 
+for (let index = 0; index < slider1.listMoreBtns(3).length; index++) {
+    slider1.listMoreBtns(3)[index].onclick = function(){
+       var modulBackground = slider1.sliders[3].querySelectorAll('.modul-left_backgroud')
+       var optionGroup = slider1.listMoreBtns(3)[index].parentElement;
+       var moreOption = slider1.listMoreBtns(3)[index].parentElement.querySelector('.modul-left_option-more')
+       
+       if(moreOption.className.includes('open') == true){
+         
+        slider1.tunrOffAllMoreOption(3)
+
+       }
+       else{
+        slider1.tunrOffAllMoreOption(3)
+        optionGroup.classList.add('open')
+        modulBackground[index].classList.add('open')
+        moreOption.classList.add('open')
+       }
+   }
+
+}
+
 
 const songs2 = [
     
     {
         name: 'Chẳng Thể Tìm Được Em - Lofi',
         singer: 'PhucXp ft. Freak D',
-        source_audio: '/lofi/Chẳng Thể Tìm Được Em  PhucXp ft Freak D  Official Audio.mp3',
+        source_audio: 'lofi/Chẳng Thể Tìm Được Em  PhucXp ft Freak D  Official Audio.mp3',
         image: 'artworks-yukyFaBjTlbbBrn6-yjfdgg-t500x500.jpg'
 
     }
@@ -684,7 +705,7 @@ const songs2 = [
     {
         name: 'Có Chắc Chia Tay Là Sẽ Quên - Lofi',
         singer: 'Nguyễn Đăng Nguyên x Freak D',
-        source_audio: '/lofi/Có Chắc Chia Tay Là Sẽ Quên Lofi Ver  Nguyễn Đăng Nguyên x Freak D.mp3',
+        source_audio: 'lofi/Có Chắc Chia Tay Là Sẽ Quên Lofi Ver  Nguyễn Đăng Nguyên x Freak D.mp3',
         image: 'artworks-Z5c1Cn8wXVhb4uzB-VNLC1w-t500x500.jpg'
 
     }
@@ -693,7 +714,7 @@ const songs2 = [
     {
         name: 'Anh Đâu Đấy (Lofi Ver.)',
         singer: 'Reddy x Freak D',
-        source_audio: '/lofi/Anh Đâu Đấy Lofi Ver  Reddy x Freak D.mp3',
+        source_audio: 'lofi/Anh Đâu Đấy Lofi Ver  Reddy x Freak D.mp3',
         image: 'artworks-6RbAzjsPzsd4oKWf-nfTxvg-t500x500.jpg'
 
     }
@@ -702,7 +723,7 @@ const songs2 = [
     {
         name: 'Gác Lại Âu Lo',
         singer: 'Da LAB x Miu Lê x Freak D',
-        source_audio: '/lofi/Gác Lại Âu Lo  Da LAB x Miu Lê x Freak D.mp3',
+        source_audio: 'lofi/Gác Lại Âu Lo  Da LAB x Miu Lê x Freak D.mp3',
         image: 'tải xuống.jfif'
 
     }
@@ -711,7 +732,7 @@ const songs2 = [
     {
         name: 'Ai Đưa Em Về (Lofi Ver.)',
         singer: 'Tia x Lê Thiện Hiếu x Freak D',
-        source_audio: '/lofi/Ai Đưa Em Về Lofi Ver  Tia x Lê Thiện Hiếu x Freak D.mp3',
+        source_audio: 'lofi/Ai Đưa Em Về Lofi Ver  Tia x Lê Thiện Hiếu x Freak D.mp3',
         image: 'artworks-000571150037-iq629h-t500x500.jpg'
 
     }
@@ -720,7 +741,7 @@ const songs2 = [
     {
         name: 'Bỏ Em Vào Balo (Lofi Ver.)',
         singer: 'Tân Trần x Freak D',
-        source_audio: '/lofi/Bỏ Em Vào Balo Lofi Ver  Tân Trần x Freak D.mp3',
+        source_audio: 'lofi/Bỏ Em Vào Balo Lofi Ver  Tân Trần x Freak D.mp3',
         image: 'artworks-W1nAMF4Aoyvyokgw-4nbKAw-t500x500.jpg'
 
     }
@@ -729,7 +750,7 @@ const songs2 = [
     {
         name: 'Răng Khôn (Lofi Ver.)',
         singer: 'Phí Phương Anh ft. Rin9 x Freak D',
-        source_audio: '/lofi/Răng Khôn Lofi Ver  Phí Phương Anh ft Rin9 x Freak D.mp3',
+        source_audio: 'lofi/Răng Khôn Lofi Ver  Phí Phương Anh ft Rin9 x Freak D.mp3',
         image: 'artworks-Ht6FrXh1pQjQGBXC-9isV4Q-t500x500.jpg'
 
     }
@@ -738,7 +759,7 @@ const songs2 = [
     {
         name: 'Tình Yêu Màu Hồng Lofi Ver',
         singer: 'Hồ Văn Quý x Xám x Freak D',
-        source_audio: '/lofi/Tình Yêu Màu Hồng Lofi Ver  Hồ Văn Quý x Xám x Freak D.mp3',
+        source_audio: 'lofi/Tình Yêu Màu Hồng Lofi Ver  Hồ Văn Quý x Xám x Freak D.mp3',
         image: 'artworks-l1pQjgvmEa60f4hO-3F0FoQ-t500x500.jpg'
 
     }
@@ -822,6 +843,8 @@ const songs2 = [
 
 
 
+
+    // Hàm thay đổi playlist bao gồm thay đổi UI và thay đổi dữ liệu songs
     changePlayList = function( songList ){
         songs = []
         for (let i = 0; i < songList.length; i++) {
@@ -839,18 +862,36 @@ const songs2 = [
         
         indexSong = 0;
         player.LoadMusic(songs[indexSong].name, songs[indexSong].singer , songs[indexSong].image , songs[indexSong].source_audio);
-        player.player_audio.play();
+        
 
     }
 
 
 
 
-
+    // Phần xử lý event List Music LOFI
     var listMusic_playbtn = document.querySelector('.list-music_playbtn');
     listMusic_playbtn.setAttribute("first" , true)
     var item = document.querySelectorAll('.list-music-item')
 
+    for (let i = 0; i < item.length; i++) {
+
+        item[i].onclick = function(){
+
+            if(listMusic_playbtn.getAttribute('first') == 'true' ){
+                changePlayList(songs2);
+                listMusic_playbtn.setAttribute('first', false);
+                addEventListMusic();
+    
+            }
+            indexSong = i;            
+            player.LoadMusic(songs[indexSong].name, songs[indexSong].singer , songs[indexSong].image , songs[indexSong].source_audio);
+            player.player_audio.play();
+        }
+        
+    }
+   
+    // Hàm off hiệu ứng playing (thay đổi màu background) của List Music Lofi
     function OffItemPlaying(){
         for (let i = 0; i < item.length; i++) {
             if(item[i].className.includes('list-music-item--playing')){
@@ -860,10 +901,9 @@ const songs2 = [
         }
     }
 
-
-    listMusic_playbtn.addEventListener('click', function(){
+    // Hàm thêm xử lý sự kiện cho List Music Lofi
+    function addEventListMusic(){
         var icon = listMusic_playbtn.querySelector('i')
-
         player.player_audio.addEventListener('pause', function(){
             icon.classList.remove('fa-pause');
             icon.classList.add('fa-play');
@@ -883,35 +923,32 @@ const songs2 = [
             icon.classList.add('fa-pause');
             item[indexSong].classList.add('list-music-item--playing')
         })
+    }
 
 
-
+    //  Hàm 
+    function handlePlayList(){
+        
         if(listMusic_playbtn.getAttribute('first') == 'true' ){
             changePlayList(songs2);
             listMusic_playbtn.setAttribute('first', false)
-            
+            addEventListMusic()
+            player.PlayMusic();
+
         }
         else{
 
-            if(icon.className.includes('fa-play')){
-    
-                OffItemPlaying();
-                item[indexSong].classList.add('list-music-item--playing')
+            if(player.player_audio.paused == true){
                 player.player_audio.play();
-
             }
             else{
-                OffItemPlaying();
-                icon.classList.remove('fa-pause');
-                icon.classList.add('fa-play');
                 player.player_audio.pause();
-                
             }
         }
-        
+    }
 
-    
 
-    })
+
+    listMusic_playbtn.addEventListener('click', handlePlayList)
 
     
