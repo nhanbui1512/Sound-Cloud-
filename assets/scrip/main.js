@@ -396,14 +396,7 @@ class PlayerMusic {
         OnPauseIcon(indexSong)
     }
 
-    // player.player_audio.addEventListener('play', function(){
-    //     player.player_playbtn_icon.classList.remove('fa-play')
-    //     player.player_playbtn_icon.classList.add('fa-pause')
-
-    //     OffPauseIcon();
-    //     OnPauseIcon(indexSong)
-    // })
-
+    
 
     player.player_audio.onpause = () =>{
         player.player_playbtn_icon.classList.remove('fa-pause')
@@ -602,6 +595,14 @@ class PlayerMusic {
        
    }
 
+   player.player_audio.addEventListener('ended' , function(){
+    if(indexSong < songs.length - 1 ){
+        indexSong++;
+        player.LoadMusic(songs[indexSong].name, songs[indexSong].singer , songs[indexSong].image , songs[indexSong].source_audio)
+            player.player_audio.play();
+    }
+   })
+
 
    // Open MoreOption Of Slider 1
     var mudulMoreBtns = document.querySelectorAll('.modul-left_morebtn')
@@ -626,6 +627,7 @@ class PlayerMusic {
    
   }
 
+   // Open MoreOption Of Slider 2
 
   for (let index = 0; index < slider1.listMoreBtns(1).length; index++) {
     slider1.listMoreBtns(1)[index].onclick = function(){
@@ -647,6 +649,7 @@ class PlayerMusic {
    }
 
 }
+   // Open MoreOption Of Slider 3
 
 for (let index = 0; index < slider1.listMoreBtns(2).length; index++) {
     slider1.listMoreBtns(2)[index].onclick = function(){
@@ -668,6 +671,7 @@ for (let index = 0; index < slider1.listMoreBtns(2).length; index++) {
    }
 
 }
+   // Open MoreOption Of Slider 4
 
 for (let index = 0; index < slider1.listMoreBtns(3).length; index++) {
     slider1.listMoreBtns(3)[index].onclick = function(){
