@@ -1,0 +1,131 @@
+
+
+.upload-main{
+    height: 5000px;
+    width: 100%;
+    margin: 48px 140px 0px 140px;
+    background-color: #fff;
+}
+.fl-right{
+    position: absolute;
+    right: 0;
+}
+.displaying{
+    border-bottom: 1px solid #f50 !important;
+}
+.upload-header{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0px 30px;
+    height: 50px;
+    border-bottom: 1px solid #f2f2f2;
+}
+.upload-header_item{
+    line-height: 50px;
+    font-size: 14px;
+    margin: 0px 12px;
+    font-weight: 100;
+
+}
+.upload-header_item:hover{
+    border-bottom: 1px solid #111;
+}
+.upload-header_item a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+.upload-header_item:first-child{
+    margin-right: 12px !important;
+    margin-left: 0px !important ;
+}
+.upload-header_item:last-child{
+    margin: 0px 30px;
+}
+.upload-content{
+    width: 800px;
+    margin: 0px auto;
+}
+.upload-content_loading{
+    padding: 20px;
+    border: 1px solid #f2f2f2;
+    margin-top: 90px;
+
+}
+.upload-limit{
+   width: 410px;
+}
+.upload-limit_header{
+    width: 100%;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+.upload-limit_header i{
+    float: right;
+    cursor: pointer;
+}
+.upload-limit_body{
+    height: 4px;
+    width: 100%;
+    background-color: #e5e5e5;
+    margin: 10px 0px 8px 0px;
+    border-radius: 3px;
+}
+.upload-limit_footer{
+    font-size: 12px;
+    color: #666;
+}
+.upload-limit_footer a{
+    text-decoration: none;
+    /* color: #38d; */
+    color: #f50;
+}
+.try-pro-btn{
+    background: #fff;
+    color: #f50;
+    border: 1px solid #f50;
+    font-size: 16px;
+    line-height: 18px;
+    padding: 10px 15px;
+    height: 40px;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    margin-top: 6px;
+    margin-right: 20px;
+}
+.try-pro-btn:hover{
+    background-color: #f50;
+    color: #fff;
+}
+.upload-content_chooser-container{
+    padding: 100px 0px;
+    border: 1px solid #f2f2f2;
+    margin-top: 12px;
+}
+.upload-content_chooser-container h1{
+    font-weight: 100;
+    font-size: 22px;
+    text-align: center;
+}
+.choose-files{
+    text-align: center;
+    margin: 16px 0px 12px;
+}
+.choose-files button{
+    padding: 10px 15px;
+    background-color: #f50;
+    color: #fff;
+    border: none;
+    min-width: 300px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.choose-files_as-play-list{
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+}

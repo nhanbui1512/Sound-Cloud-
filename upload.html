@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="./assets/css/upload.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/fonts/fontello-71dcf3ae/css/fontawesome-codes.css">
+    <link rel="stylesheet" href="./assets/fonts/fontello-71dcf3ae/css/fontawesome-embedded.css">
+    <link rel="stylesheet" href="./assets/fonts/fontello-71dcf3ae/css/fontawesome-ie7-codes.css">
+    <link rel="stylesheet" href="./assets/fonts/fontello-71dcf3ae/css/fontawesome-ie7.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.0.0-web/css/all.css">
+    
+
+    <title>Music player</title>
+    
+  </head>
+  <body>
+    <div id="main">
+      <header class="header">
+        <div class="header-container">
+            <div class="header-container__left">
+                <div class="header-container__left-logo">
+                    <i class="logo-icon fa-brands fa-soundcloud"></i>
+                </div>
+
+                <a href="/" class="header-container__bar-items border-right">
+                    Home
+                </a>
+
+                <div class="header-container__bar-items border-right">
+                    Stream
+                </div>
+
+                <div class="header-container__bar-items border-right">
+                    Library
+                </div>
+            </div>
+            <div class="header-search relative">
+                <input placeholder="Search" class="search-input" type="text">
+                <button class="search-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                
+                <ul class="search-result-container" >
+                    
+                    <li class="search-result-item background-333">
+                        
+                        <span class="search-result-item_icon ">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+
+                        <span>
+                            Search for 
+                        </span>
+                    </li>
+
+                    <li class="search-result-item">
+                        
+                        <span class="search-result-item_icon ">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+
+                        <span>
+                            Head In The Clouds HayD
+                        </span>
+                    </li>
+
+                    <li class="search-result-item">
+                        
+                        <span class="search-result-item_icon ">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+
+                        <span>
+                            Healling Music
+                        </span>
+                    </li>
+
+                    <li class="search-result-item">
+                        
+                        <span class="search-result-item_icon ">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+
+                        <span>
+                            Reading Book Music
+                        </span>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="header-right">
+                <div class="header-container__bar-items background-black">
+                    Upload
+                </div>
+
+                <div id="Nav-User" class="header-right_UserNav header-container__bar-items" onclick="OnOff ('User-Menu'); AddSelectedModified('Nav-User'); ;  OffModified('Nav-User'); ">
+                    <span class="user-avatar">
+                        <img class="img-avatar" src="./assets/img/IMG1_03391.jpg" alt="">
+                    </span>
+                    <span class="user-name">
+                        Nhân Bùi
+                    </span>
+                    <i class="fa-solid fa-angle-down"></i>
+                    <ul id="User-Menu" class="header-menulist menu-left">
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                <i class="header-optionlist_profile-icon fa-solid fa-user"></i>
+                                Profile
+                            </a>
+                        </li>
+
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                <i class="header-optionlist_profile-icon fa-solid fa-heart"></i>
+                                Like
+                            </a>
+                        </li>
+
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                <i class="header-optionlist_profile-icon fa fa-list" aria-hidden="true"></i>
+                                Playlists
+                            </a>
+                        </li>
+
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                <i class="header-optionlist_profile-icon fa fa-podcast" aria-hidden="true"></i>
+                                Stations
+                            </a>
+                        </li>
+
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                <i class="header-optionlist_profile-icon fa fa-users" aria-hidden="true"></i>
+                                Following
+                            </a>
+                        </li>
+
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                <i class="header-optionlist_profile-icon fa fa-users" aria-hidden="true"></i>
+                                Who to follow
+                            </a>
+                        </li>
+
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                <i class="header-optionlist_profile-icon header-optionlist_profile-icon fa fa-star"></i>
+                                Try Pro
+                            </a>
+                        </li>
+
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                <i class="header-optionlist_profile-icon fa fa-bar-chart" aria-hidden="true"></i>
+                                Tracks
+                            </a>
+                        </li>
+
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                <i class="header-optionlist_profile-icon fa fa-tasks" aria-hidden="true"></i>
+                                Distribute
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="bell-btn" class="bell-btn header-container__bar-items font-size-16" onclick="OnOff('menu-notifi'); AddSelectedModified('bell-btn'); OffModified('bell-btn');  ">
+                    <i class="fa-solid fa-bell"></i>
+                    <div id="menu-notifi" class="menu-notification position-noti">
+                        <div class="menu-notification_header">
+                            <h2 class="menu-title">Notifications</h2>
+                            <a href="" class="menu-setting-btn" >Settings</a>
+                        </div>
+                        <div class="menu-notification_body border-top">
+                            <div class="menu-notification_body-message">
+                                No notifications
+                            </div>
+                        </div>
+
+                        <a href="#" class="menu-notification_footer">
+                            View all notifications
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mail-btn" class="header-container__bar-items font-size-16 relative" onclick="OnOff('menu-mail'); AddSelectedModified('mail-btn');  OffModified('mail-btn'); " >
+                    <i class="fa-solid fa-envelope"></i>
+                    <div id="menu-mail" class="menu-notification position-mail">
+                        <div class="menu-notification_header">
+                            <h2 class="menu-title">Messages</h2>
+                            <!-- <a href="" class="menu-setting-btn" >Settings</a> -->
+                        </div>
+                        <div class="menu-notification_body border-top">
+                            <div class="menu-notification_body-message">
+                                No messages
+                            </div>
+                        </div>
+
+                        <a href="#" class="menu-notification_footer">
+                            View all messages
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="more-btn" class="nav-more header-container__bar-items font-size-16" onclick="OnOff('menu-more');  AddSelectedModified('more-btn');  OffModified('more-btn');">
+                    <i class="fa-solid fa-ellipsis"></i>
+                    <ul id="menu-more" class="header-menulist menu-right witdh-171">
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                About us
+                            </a>
+                        </li>
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                Legal
+                            </a>
+                        </li>
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                Coppyright
+                            </a>
+                        </li>
+
+                        <li class="header-optionlist border-top">
+                            <a href="" class="header-optionlist_profile">
+                                Mobile apps
+                            </a>
+                        </li>
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                For Creators
+                            </a>
+                        </li>
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                Blog
+                            </a>
+                        </li>
+
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                Developers
+                            </a>
+                        </li>
+
+                        <li class="header-optionlist border-top">
+                            <a href="" class="header-optionlist_profile">
+                                Support
+                            </a>
+                        </li>
+
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                Settings
+                            </a>
+                        </li>
+
+                        <li class="header-optionlist">
+                            <a href="" class="header-optionlist_profile">
+                                Sign out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            
+        </div>
+      </header>
+      
+      <div class="body">
+        <div class="upload-main">
+            
+            <ul class="upload-header relative">
+                <li class="upload-header_item displaying" ><a class="color-f50" href="">Upload</a></li>
+                <li class="upload-header_item" ><a href="">Mastering</a></li>
+                <li class="upload-header_item" ><a href="">Your Tracs</a></li>
+                <li class="upload-header_item" ><a href="">Pro Plans</a></li>
+                <li class="upload-header_item fl-right" ><a href=""><i class="fa-solid fa-up-right-from-square font-11"></i> Creators on SoundCloud</a></li>
+
+            </ul>
+            
+
+            <div class="upload-content">
+                <div class="upload-content_loading row relative" >
+                    <div class="upload-limit">
+                        <div class="upload-limit_header">
+                            0% of free uploads used
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+
+                        <div class="upload-limit_body">
+
+                        </div>
+                        <div class="upload-limit_footer">
+                            <a href="">Try Pro Unlimited</a>
+                            for unlimited uploads.
+                        </div>
+                    </div>
+
+                    <button class="try-pro-btn fl-right">
+                        Try Pro Unlimited
+                    </button>
+                </div>
+
+                <div class="upload-content_chooser-container">
+                    <h1>Drag and drop your tracks & albums here</h1>
+                    <div class="choose-files">
+                        <button>or choose files to upload</button>
+                    </div>
+                    <div class="choose-files_as-play-list">
+                        <input type="checkbox">
+                        <span>Make a playlist when multiple files are selected</span>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    
+    <script>
+      function OnOff (a){
+        var x = document.getElementById(a);
+        
+        if(x.style.display == '' || x.style.display == 'none'){
+            x.style.display = 'block';
+        }
+        else{
+            x.style.display = 'none';
+        }
+      }
+              function AddSelectedModified(a){
+                var x = document.getElementById(a);
+                
+                if(x.className.includes('selected') == true){
+                    x.classList.remove('selected');
+
+                }
+                else{
+                    x.classList.add('selected')
+                }
+              }
+
+              function OffModified(a){
+                  var userbtn = document.getElementById('Nav-User');
+                  var menuuser = document.getElementById('User-Menu');
+
+                  var bellbtn = document.getElementById('bell-btn');
+                  var menubell = document.getElementById('menu-notifi');
+
+                  var mailbtn = document.getElementById('mail-btn');
+                  var menumail = document.getElementById('menu-mail');
+
+                  var morebtn = document.getElementById('more-btn');
+                  var menumore = document.getElementById('menu-more');
+
+                  
+                  if(a === 'Nav-User'){
+                      bellbtn.classList.remove('selected');
+                      menubell.style.display = 'none';
+                  
+                      mailbtn.classList.remove('selected');
+                      menumail.style.display = 'none';
+
+                      morebtn.classList.remove('selected');
+                      menumore.style.display = 'none';
+                  }
+                  if(a === 'bell-btn'){
+                      userbtn.classList.remove('selected');
+                      menuuser.style.display = 'none';
+                  
+                      mailbtn.classList.remove('selected');
+                      menumail.style.display = 'none';
+
+                      morebtn.classList.remove('selected');
+                      menumore.style.display = 'none';
+                  }
+                  if(a === 'mail-btn'){
+                      userbtn.classList.remove('selected');
+                      menuuser.style.display = 'none';
+                  
+                      bellbtn.classList.remove('selected');
+                      menubell.style.display = 'none';
+
+                      morebtn.classList.remove('selected');
+                      menumore.style.display = 'none';
+                  }
+                  if(a ==='more-btn'){
+                      userbtn.classList.remove('selected');
+                      menuuser.style.display = 'none';
+                  
+                      bellbtn.classList.remove('selected');
+                      menubell.style.display = 'none';
+
+                      mailbtn.classList.remove('selected');
+                      menumail.style.display = 'none';
+                  }
+                  
+              }
+    </script>
+  
+  </body>
+</html>
